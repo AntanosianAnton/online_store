@@ -1,11 +1,16 @@
 {% extends "shop/base.html" %}
 {% load static %}
-
+<link href="{% static "css/base.css" %}" rel="stylesheet">
 {% block title %}
   Contacts
 {% endblock %}
 
 {% block content %}
-  <h1>Contacts</h1>
-  <!-- Your content goes here -->
+  <h1>Контакты</h1>
+  <p>
+    Мы в Telegram <a href="https://t.me/revada_miller" class="contact-link" target="_blank">https://t.me/revada_miller</a>
+  </p>
+  <p>
+    Мы в Instagram <a href="https://www.instagram.com/revada_miller?igsh=MWJrMG13ZzBrbnhvNQ==" class="contact-link" target="_blank">https://www.instagram.com/revada_miller?igsh=MWJrMG13ZzBrbnhvNQ==</a>
+  </p>
 {% endblock %}

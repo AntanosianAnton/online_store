@@ -8,14 +8,14 @@
   </head>
   <body>
     <div id="header">
-      <a href="/" class="logo">Revada miller</a>
+      <a href="/" class="logo">REVADA miller</a>
       <div class="header-links">
         <a href="{% url 'shop:delivery_payments' %}" class="header-link">Доставка & оплата</a>
         <a href="{% url 'shop:contacts' %}" class="header-link">Контакты</a>
         <a href="{% url 'shop:exchange_return' %}" class="header-link">Возврат & Обмен</a>
      </div>
     </div>
-    <div id="subheader">
+    <!-- <div id="subheader">
       <div class="cart">
         {% with total_items=cart|length %}
           {% if total_items > 0 %}
@@ -29,7 +29,7 @@
           {% endif %}
         {% endwith %}
       </div>
-    </div>
+    </div> -->
     <div id="content">
       {% block content %}
       {% endblock %}

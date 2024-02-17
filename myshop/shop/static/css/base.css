@@ -370,4 +370,13 @@ form div.field {
     border-radius:4px;
 }
 
+.contact-link {
+    color: #1e88e5; /* Change the color as desired */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Add a smooth color transition on hover */
+}
 
+.contact-link:hover {
+    color: #0d47a1; /* Change the color on hover */
+}

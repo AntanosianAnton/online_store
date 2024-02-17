@@ -9,9 +9,9 @@ urlpatterns = [
          name='product_list_by_category'),
     path('<int:id>/<slug:slug>/', views.product_detail,
          name='product_detail'),
-    path('delivery_payments/', views.delivery_payments,
+    path('shop/delivery_payments/', views.delivery_payments,
          name='delivery_payments'),
-    path('contacts/', views.contacts, name='contacts'),
-    path('exchange_return/', views.exchange_return,
+    path('shop/contacts/', views.contacts, name='contacts'),
+    path('shop/exchange_return/', views.exchange_return,
          name='exchange_return'),
 ]
