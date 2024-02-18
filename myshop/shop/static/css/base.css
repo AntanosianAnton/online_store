@@ -10,7 +10,9 @@ body {
 }
 
 h1, h2, h3, h4, h5 , h6 {
-    font-family: 'Rowdies', sans-serif; font-weight:normal;
+    font-family: 'Rowdies', sans-serif;
+    font-weight:normal;
+    text-align:center;
 }
 
 a {
@@ -140,6 +142,8 @@ ul.errorlist {
     margin-left: 20px;
     font-family: 'Rowdies', sans-serif; /* Use your desired font */
 }
+
+
 
 #header .header-link:hover {
     color: #5993bb;
