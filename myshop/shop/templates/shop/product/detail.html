@@ -4,10 +4,15 @@
 {% block title %}
   {{ product.name }}
 {% endblock %}
+
+
 {% block content %}
   <div class="product-detail">
-    <img src="{% if product.image %}{{ product.image.url }}{% else %}
-    {% static "img/no_image.png" %}{% endif %}">
+    <div class="image-container">
+      <img id="current-image" src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+      <button id="prev-btn">&lt;</button>
+      <button id="next-btn">&gt;</button>
+    </div>
     <h1>{{ product.name }}</h1>
     <h2>
       <a href="{{ product.category.get_absolute_url }}">
@@ -16,10 +21,37 @@
     </h2>
     <p class="price">${{ product.price }}</p>
     <form action="{% url "cart:cart_add" product.id %}" method="post">
-        {{ cart_product_form }}
-        {% csrf_token %}
-        <input type="submit" value="Add to cart">
+      {{ cart_product_form }}
+      {% csrf_token %}
+      <input type="submit" value="Add to cart">
     </form>
     {{ product.description|linebreaks }}
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentImage = document.getElementById('current-image');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+
+      const images = [{% for image in product.images.all %}'{{ image.image.url }}',{% endfor %}];
+
+      let currentIndex = 0;
+
+      function showImage(index) {
+        currentImage.src = images[index];
+        currentIndex = index;
+      }
+
+      prevBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+    });
+  </script>
 {% endblock %}

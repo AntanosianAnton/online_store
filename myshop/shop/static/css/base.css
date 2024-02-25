@@ -2,11 +2,21 @@
 @import url(//fonts.googleapis.com/css?family=Rowdies);
 @import url(//fonts.googleapis.com/css?family=Khand);
 
+@font-face {
+    font-family: 'Revada_Zagolovok';
+    src: url(fonts/FREEFATFONT-Regular.otf);
+}
+
+@font-face {
+    font-family: 'dostavka';
+    src: url(fonts/Inkverse-BWDRx.ttf);
+}
+
 body {
     margin:0;
     padding:0;
-    font-family:helvetica, sans-serif;
-    background-color: #f6f4f0;
+    font-family:'Rowdies', sans-serif;
+    background-color: #ffffff;
 }
 
 h1, h2, h3, h4, h5 , h6 {
@@ -53,7 +63,7 @@ table {
 }
 
 table th, table td {
-    text-align:left;
+    text-align:center;
     font-size:14px;
     padding:10px;
     margin:0;
@@ -126,6 +136,8 @@ ul.errorlist {
     font-size:30px;
     overflow:auto;
     text-align: center;
+    font-family: 'Revada_Zagolovok', sans-serif; /* Use your desired font */
+
 }
 
 #header .header-links {
@@ -140,7 +152,7 @@ ul.errorlist {
     color: #333;
     text-decoration: none;
     margin-left: 20px;
-    font-family: 'Rowdies', sans-serif; /* Use your desired font */
+    font-family: 'dostavka', sans-serif; /* Use your desired font */
 }
 
 
@@ -157,12 +169,12 @@ ul.errorlist {
 }
 
 #header .logo {
-    font-family: 'Rowdies', sans-serif;
-    float:middle;
+    font-family: 'Revada_Zagolovok', sans-serif;
+    float:center;
     color:#333;
     font-size:89px;
-    margin-right:auto;
-    margin-left: auto;
+    margin-bottom: 1;
+    line-height: 0.35em;
 }
 
 #subheader .cart {
@@ -218,8 +230,15 @@ ul.errorlist {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     text-align: center;
-    /* justify-content: space-around; Adjust as needed for spacing */
+    justify-content: space-around
 }
+
+.product-list h1 {
+    margin: 0 auto; /* Центрируем элемент по горизонтали */
+    text-align: center; /* Выравниваем текст по центру */
+    width: fit-content; /* Устанавливаем ширину элемента по содержимому */
+}
+
 
 .product-list .item {
     text-align: center;
@@ -228,16 +247,16 @@ ul.errorlist {
 
 .product-list .item img {
     width:100%;
-    margin-bottom:none;
+    margin-bottom: 10px;
     border-radius: 20px;
 }
 
 .product-list .item a {
-    font-family: 'Khand', sans-serif; /* Replace 'YourDesiredFont' with the desired font name */
+    font-family: 'dostavka', sans-serif; /* Replace 'YourDesiredFont' with the desired font name */
     font-weight: bold; /* Optional: Adjust the font weight as needed */
-    font-size: 50px; /* Optional: Adjust the font size as needed */
+    font-size: 16px; /* Optional: Adjust the font size as needed */
     color: #000000; /* Optional: Adjust the font color as needed */
-    text-decoration: none; /* Optional: Remove underlines if needed */
+    /* text-decoration: none; Optional: Remove underlines if needed */
 }
 
 .product-detail {
@@ -383,4 +402,27 @@ form div.field {
 
 .contact-link:hover {
     color: #0d47a1; /* Change the color on hover */
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
 }

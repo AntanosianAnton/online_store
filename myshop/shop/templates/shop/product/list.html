@@ -5,6 +5,7 @@
   {% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
 
+
 {% block content %}
   <!-- <div id="sidebar">
     <h3>Categories</h3>
@@ -24,11 +25,16 @@
     {% for product in products %}
       <div class="item">
         <a href="{{ product.get_absolute_url }}">
-          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+          {% if product.images.all %}
+          <img class="product-image" src="{{ product.images.all.0.image.url }}" alt="{{ product.name }}">
+          <img class="product-hover-image" src="{{ product.images.all.1.image.url }}" alt="{{ product.name }}">
+        {% else %}
+          <img src="{% static 'img/no_image.png' %}" alt="No image">
+          {% endif %}
         </a>
-        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+        <a href="{{ product.get_absolute_url }}"style="font-size: 20px;">{{ product.name }}</a>
         <br>
-        ${{ product.price }}
+        <a href="" style="font-size: 20px;">{{ product.price }}</a>
       </div>
     {% endfor %}
     {% if is_paginated %}
@@ -51,4 +57,17 @@
       </div>
     {% endif %}
   </div>
+  <style>
+    .product-hover-image {
+      display: none;
+    }
+
+    .item:hover .product-image {
+      display: none;
+    }
+
+    .item:hover .product-hover-image {
+      display: inline-block;
+    }
+  </style>
 {% endblock %}
