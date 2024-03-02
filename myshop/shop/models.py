@@ -22,13 +22,6 @@ class Category(models.Model):
                        args=[self.slug])
 
 
-class ProductImage(models.Model):
-    image = models.ImageField(upload_to='products/%Y/%m/%d')
-
-    def __str__(self):
-        return self.image.name
-
-
 class Product(models.Model):
     category = models.ForeignKey(
         Category,
@@ -37,11 +30,6 @@ class Product(models.Model):
     )
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
-    images = models.ManyToManyField(
-        ProductImage,
-        blank=True,
-        verbose_name='images'  # читаемое название поля
-    )
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
@@ -62,3 +50,15 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail',
                        args=[self.slug, self.id])
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(
+        Product,
+        related_name='images',
+        null=True,
+        on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='products/%Y/%m/%d')
+
+    def __str__(self):
+        return self.image.name
