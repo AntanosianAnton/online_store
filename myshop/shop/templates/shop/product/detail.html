@@ -14,17 +14,17 @@
       <button id="next-btn">&gt;</button>
     </div>
     <h1>{{ product.name }}</h1>
-    <h2>
+    <!-- <h2>
       <a href="{{ product.category.get_absolute_url }}">
         {{ product.category }}
       </a>
-    </h2>
-    <p class="price">${{ product.price }}</p>
-    <form action="{% url "cart:cart_add" product.id %}" method="post">
+    </h2> -->
+    <p class="price">{{ product.formatted_price }} р</p>
+    <!-- <form action="{% url "cart:cart_add" product.id %}" method="post">
       {{ cart_product_form }}
       {% csrf_token %}
       <input type="submit" value="Add to cart">
-    </form>
+    </form> -->
     {{ product.description|linebreaks }}
   </div>
 
@@ -52,6 +52,12 @@
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
       });
+
+      // Set buttons position
+      const imageHeight = currentImage.clientHeight;
+      const btnTop = (imageHeight - prevBtn.clientHeight) / 2;
+      prevBtn.style.top = btnTop + 'px';
+      nextBtn.style.top = btnTop + 'px';
     });
   </script>
 {% endblock %}

@@ -133,7 +133,7 @@ ul.errorlist {
 
 #header {
     padding:10px 0;
-    font-size:30px;
+    font-size:20px;
     overflow:auto;
     text-align: center;
     font-family: 'Revada_Zagolovok', sans-serif; /* Use your desired font */
@@ -172,7 +172,7 @@ ul.errorlist {
     font-family: 'Revada_Zagolovok', sans-serif;
     float:center;
     color:#333;
-    font-size:89px;
+    font-size:50px;
     margin-bottom: 1;
     line-height: 0.35em;
 }
@@ -187,7 +187,7 @@ ul.errorlist {
     overflow:hidden;
 }
 
-#sidebar {
+/* #sidebar {
     width:220px;
     padding:30px 20px 0 0;
     float:left;
@@ -215,7 +215,7 @@ ul.errorlist {
 
 #sidebar ul li.selected a {
     color:#fff;
-}
+} */
 
 #main {
     float:center;
@@ -246,7 +246,9 @@ ul.errorlist {
 }
 
 .product-list .item img {
-    width:100%;
+    /* width:100%; */
+    width: 20em; /* Например, ширина в 10 em */
+    height: auto;
     margin-bottom: 10px;
     border-radius: 20px;
 }
@@ -261,6 +263,7 @@ ul.errorlist {
 
 .product-detail {
     text-align:justify;
+    display: flex;
 }
 
 .product-detail .price {
@@ -269,21 +272,57 @@ ul.errorlist {
     font-weight:bold;
 }
 
+.product-detail .image-container {
+    position: relative; /* Устанавливаем позицию контейнера как относительную */
+    display: inline-block; /* Чтобы контейнер подстраивался под содержимое */
+    flex: 1;
+}
+
 .product-detail img {
-    width:40%;
-    float:center;
+    width: 25em; /* Например, ширина в 10 em */
+    height: auto;
+    margin: 0 auto;
     padding:0 20px 20px 0;
     margin-bottom:none;
     border-radius: 50px;
+    margin-right: -20px; /* эта настройка меняет расположение правой кнопки листания фото */
+}
+
+.product-detail #prev-btn,
+.product-detail #next-btn {
+    position: absolute; /* Устанавливаем абсолютное позиционирование */
+    top: 50%; /* Положение по вертикали в центре */
+    transform: translateY(-50%); /* Центрируем относительно верхнего края контейнера */
+    background-color: rgba(255, 255, 255, 0.5); /* Прозрачный фон для кнопок */
+    border: none;
+    border-radius: 50px;
+    color: #000;
+    font-size: 20px;
+    padding: 10px;
+    width: 45px; /* Ширина кнопки */
+    height: 45px; /* Высота кнопки */
+}
+
+.product-detail #prev-btn {
+    left: 0; /* Кнопка назад прижимается к левому краю контейнера */
+}
+
+.product-detail #next-btn {
+    right: 0; /* Кнопка вперед прижимается к правому краю контейнера */
 }
 
 .product-detail h1 {
-    margin-bottom:0;
+    margin: bottom 10px;
 }
 
 .product-detail h2 {
     margin-top:10px;
 }
+
+.description-container {
+    flex: 1;
+    padding-left: 20px; /* Дополнительный отступ между картинкой и описанием */
+  }
 
 .order-form {
     float:left;

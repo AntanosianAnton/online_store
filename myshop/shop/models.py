@@ -51,6 +51,9 @@ class Product(models.Model):
         return reverse('shop:product_detail',
                        args=[self.slug, self.id])
 
+    def formatted_price(self):
+        return "{:,.0f}".format(self.price).replace(",", " ")
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(

@@ -21,7 +21,7 @@
     </ul>
   </div> -->
   <div id="main" class="product-list">
-    <h1>{% if category %}{{ category.name }}{% else %}Каталог{% endif %}</h1>
+    <!-- <h1>{% if category %}{{ category.name }}{% else %}{% endif %}</h1> -->
     {% for product in products %}
       <div class="item">
         <a href="{{ product.get_absolute_url }}">
@@ -32,9 +32,10 @@
           <img src="{% static 'img/no_image.png' %}" alt="No image">
           {% endif %}
         </a>
+        <br>
         <a href="{{ product.get_absolute_url }}"style="font-size: 20px;">{{ product.name }}</a>
         <br>
-        <a href="" style="font-size: 20px;">{{ product.price }}</a>
+        <a href="" style="font-size: 20px;">{{ product.formatted_price}} р</a>
       </div>
     {% endfor %}
     {% if is_paginated %}
