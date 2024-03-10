@@ -12,6 +12,11 @@
     src: url(fonts/Inkverse-BWDRx.ttf);
 }
 
+@font-face {
+    font-family: 'description';
+    src: url(fonts/Project\ Space.ttf);
+}
+
 body {
     margin:0;
     padding:0;
@@ -152,7 +157,7 @@ ul.errorlist {
     color: #333;
     text-decoration: none;
     margin-left: 20px;
-    font-family: 'dostavka', sans-serif; /* Use your desired font */
+    font-family: 'description', sans-serif; /* Use your desired font */
 }
 
 
@@ -254,7 +259,7 @@ ul.errorlist {
 }
 
 .product-list .item a {
-    font-family: 'dostavka', sans-serif; /* Replace 'YourDesiredFont' with the desired font name */
+    font-family: 'description', sans-serif; /* Replace 'YourDesiredFont' with the desired font name */
     font-weight: bold; /* Optional: Adjust the font weight as needed */
     font-size: 16px; /* Optional: Adjust the font size as needed */
     color: #000000; /* Optional: Adjust the font color as needed */
@@ -264,28 +269,26 @@ ul.errorlist {
 .product-detail {
     text-align:justify;
     display: flex;
-}
-
-.product-detail .price {
-    color:#333;
-    font-size:28px;
-    font-weight:bold;
+    font-family: 'description', sans-serif;
 }
 
 .product-detail .image-container {
-    position: relative; /* Устанавливаем позицию контейнера как относительную */
-    display: inline-block; /* Чтобы контейнер подстраивался под содержимое */
-    flex: 1;
+    position: relative;
+    margin-right: 20px;
+    width: 560px;
+    margin-right: 20px;
+    display: flex; /* Добавляем свойство display: flex; для размещения элементов в строку */
+    align-items: center; /* Выравниваем элементы по вертикали */
+
 }
 
 .product-detail img {
-    width: 25em; /* Например, ширина в 10 em */
+    width: 35em; /* Например, ширина в 10 em */
     height: auto;
     margin: 0 auto;
     padding:0 20px 20px 0;
     margin-bottom:none;
     border-radius: 50px;
-    margin-right: -20px; /* эта настройка меняет расположение правой кнопки листания фото */
 }
 
 .product-detail #prev-btn,
@@ -293,14 +296,15 @@ ul.errorlist {
     position: absolute; /* Устанавливаем абсолютное позиционирование */
     top: 50%; /* Положение по вертикали в центре */
     transform: translateY(-50%); /* Центрируем относительно верхнего края контейнера */
-    background-color: rgba(255, 255, 255, 0.5); /* Прозрачный фон для кнопок */
+    background-color: rgba(255, 255, 255, 0.801); /* Прозрачный фон для кнопок */
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     color: #000;
     font-size: 20px;
     padding: 10px;
-    width: 45px; /* Ширина кнопки */
-    height: 45px; /* Высота кнопки */
+    width: 30px;
+    height: 45px;
+    margin-top: 0px;
 }
 
 .product-detail #prev-btn {
@@ -311,18 +315,17 @@ ul.errorlist {
     right: 0; /* Кнопка вперед прижимается к правому краю контейнера */
 }
 
-.product-detail h1 {
-    margin: bottom 10px;
+.product-detail .product-info {
+    flex: 1; /* Растягиваем этот блок на всю доступную ширину */
+    margin-right: 20px; /* Отступ справа от product image */
+    text-align: left;
+    width: 500px;
 }
 
-.product-detail h2 {
-    margin-top:10px;
+.product-detail .product_name,
+.product-detail .price {
+    font-weight: bold;
 }
-
-.description-container {
-    flex: 1;
-    padding-left: 20px; /* Дополнительный отступ между картинкой и описанием */
-  }
 
 .order-form {
     float:left;

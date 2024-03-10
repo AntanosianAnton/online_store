@@ -12,22 +12,25 @@
       <img id="current-image" src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
       <button id="prev-btn">&lt;</button>
       <button id="next-btn">&gt;</button>
-    </div>
-    <h1>{{ product.name }}</h1>
-    <!-- <h2>
-      <a href="{{ product.category.get_absolute_url }}">
-        {{ product.category }}
-      </a>
-    </h2> -->
-    <p class="price">{{ product.formatted_price }} р</p>
-    <!-- <form action="{% url "cart:cart_add" product.id %}" method="post">
-      {{ cart_product_form }}
-      {% csrf_token %}
-      <input type="submit" value="Add to cart">
-    </form> -->
-    {{ product.description|linebreaks }}
+      <div class="product-info">
+        <p class="product_name">{{ product.name }}</p>
+        <!-- <h2>
+          <a href="{{ product.category.get_absolute_url }}">
+            {{ product.category }}
+          </a>
+        </h2> -->
+        <p class="price">{{ product.formatted_price }} р.</p>
+        <p class="description">{{product.description|linebreaks }}</p>
+        <!-- <form action="{% url "cart:cart_add" product.id %}" method="post">
+          {{ cart_product_form }}
+          {% csrf_token %}
+          <input type="submit" value="Add to cart">
+        </form> -->
+      </div>
+      
+    </div> 
   </div>
-
+    
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const currentImage = document.getElementById('current-image');
