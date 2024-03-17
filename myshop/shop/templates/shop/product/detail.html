@@ -12,23 +12,29 @@
       <img id="current-image" src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
       <button id="prev-btn">&lt;</button>
       <button id="next-btn">&gt;</button>
-      <div class="product-info">
-        <p class="product_name">{{ product.name }}</p>
-        <!-- <h2>
-          <a href="{{ product.category.get_absolute_url }}">
-            {{ product.category }}
-          </a>
-        </h2> -->
-        <p class="price">{{ product.formatted_price }} р.</p>
-        <p class="description">{{product.description|linebreaks }}</p>
-        <!-- <form action="{% url "cart:cart_add" product.id %}" method="post">
-          {{ cart_product_form }}
-          {% csrf_token %}
-          <input type="submit" value="Add to cart">
-        </form> -->
-      </div>
-      
-    </div> 
+    </div>
+    <div class="thumbnails-container">
+      {% for image in product.images.all %}
+      <button class="thumbnail-btn">
+        <img src="{{ image.image.url }}" alt="{{ product.name }}" width="200" height="200">
+      </button>
+      {% endfor %}
+    </div>
+    <div class="product-info">
+      <p class="product_name">{{ product.name }}</p>
+      <!-- <h2>
+        <a href="{{ product.category.get_absolute_url }}">
+          {{ product.category }}
+        </a>
+      </h2> -->
+      <p class="price">{{ product.formatted_price }} р.</p>
+      <p class="description">{{product.description|linebreaks }}</p>
+      <!-- <form action="{% url "cart:cart_add" product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input type="submit" value="Add to cart">
+      </form> -->
+    </div>
   </div>
     
   <script>
@@ -36,31 +42,38 @@
       const currentImage = document.getElementById('current-image');
       const prevBtn = document.getElementById('prev-btn');
       const nextBtn = document.getElementById('next-btn');
-
-      const images = [{% for image in product.images.all %}'{{ image.image.url }}',{% endfor %}];
-
+    
+      const thumbnails = document.querySelectorAll('.thumbnail-btn img');
+    
       let currentIndex = 0;
-
+    
       function showImage(index) {
-        currentImage.src = images[index];
+        currentImage.src = thumbnails[index].src;
         currentIndex = index;
       }
-
+    
       prevBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
         showImage(currentIndex);
       });
-
+    
       nextBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex + 1) % images.length;
+        currentIndex = (currentIndex + 1) % thumbnails.length;
         showImage(currentIndex);
       });
-
-      // Set buttons position
+    
+      // Обработчик события для каждой миниатюры
+      thumbnails.forEach(function(thumbnail, index) {
+        thumbnail.addEventListener('click', function() {
+          showImage(index);
+        });
+      });
+    
+      // Установка начального положения кнопок
       const imageHeight = currentImage.clientHeight;
       const btnTop = (imageHeight - prevBtn.clientHeight) / 2;
       prevBtn.style.top = btnTop + 'px';
       nextBtn.style.top = btnTop + 'px';
     });
-  </script>
+    </script>
 {% endblock %}

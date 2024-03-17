@@ -269,7 +269,7 @@ ul.errorlist {
 .product-detail {
     text-align:justify;
     display: flex;
-    font-family: 'description', sans-serif;
+    font-family: 'ubuntu', sans-serif;
 }
 
 .product-detail .image-container {
@@ -282,13 +282,22 @@ ul.errorlist {
 
 }
 
-.product-detail img {
+.product-detail .image-container img {
     width: 35em; /* Например, ширина в 10 em */
     height: auto;
     margin: 0 auto;
     padding:0 20px 20px 0;
     margin-bottom:none;
     border-radius: 50px;
+}
+
+.product-detail img {
+    width: 5em; /* Например, ширина в 10 em */
+    height: auto;
+    margin: 0 auto;
+    padding:0 0 0 0;
+    margin-bottom:none;
+    border-radius: 5px;
 }
 
 .product-detail #prev-btn,
@@ -320,6 +329,7 @@ ul.errorlist {
     margin-right: 20px; /* Отступ справа от product image */
     text-align: left;
     width: 500px;
+    padding-left: 30px;
 }
 
 .product-detail .product_name,
