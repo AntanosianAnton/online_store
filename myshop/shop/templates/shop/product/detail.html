@@ -13,13 +13,13 @@
       <button id="prev-btn">&lt;</button>
       <button id="next-btn">&gt;</button>
     </div>
-    <div class="thumbnails-container">
+    <!-- <div class="thumbnails-container">
       {% for image in product.images.all %}
       <button class="thumbnail-btn">
         <img src="{{ image.image.url }}" alt="{{ product.name }}" width="200" height="200">
       </button>
       {% endfor %}
-    </div>
+    </div> -->
     <div class="product-info">
       <p class="product_name">{{ product.name }}</p>
       <!-- <h2>
@@ -35,6 +35,13 @@
         <input type="submit" value="Add to cart">
       </form> -->
     </div>
+  </div>
+  <div class="thumbnails-container">
+    {% for image in product.images.all %}
+    <button class="thumbnail-btn">
+      <img src="{{ image.image.url }}" alt="{{ product.name }}" width="200" height="200">
+    </button>
+    {% endfor %}
   </div>
     
   <script>

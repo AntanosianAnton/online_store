@@ -272,6 +272,10 @@ ul.errorlist {
     font-family: 'ubuntu', sans-serif;
 }
 
+.product-info .product_name {
+    
+}
+
 .product-detail .image-container {
     position: relative;
     margin-right: 20px;
@@ -291,13 +295,14 @@ ul.errorlist {
     border-radius: 50px;
 }
 
-.product-detail img {
-    width: 5em; /* Например, ширина в 10 em */
-    height: auto;
-    margin: 0 auto;
-    padding:0 0 0 0;
-    margin-bottom:none;
-    border-radius: 5px;
+
+.thumbnail-btn img {
+    width: 5em; /* Устанавливаем ширину изображения */
+    height: auto; /* Высота автоматически подстраивается */
+    margin: 0 auto; /* Выравниваем изображение по центру по горизонтали */
+    padding: 0; /* Убираем отступы вокруг изображения */
+    margin-bottom: none; /* Убираем нижний отступ */
+    border-radius: 5px; /* Устанавливаем скругление углов */
 }
 
 .product-detail #prev-btn,
