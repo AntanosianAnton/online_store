@@ -34,8 +34,19 @@
         {% csrf_token %}
         <input type="submit" value="Add to cart">
       </form> -->
+
+      <!-- кнопка заказать -->
+      <div class="order-button">
+        <button id="order-btn">Заказать</button>
+      </div>
+      <!-- кнопка вернуться в каталог -->
+      <div class="back-to-catalog-btn">
+        <button id="back-to-catalog-btn">Вернуться в каталог</button>
+      </div>
     </div>
   </div>
+  
+  <!-- миниатюры для фото -->
   <div class="thumbnails-container">
     {% for image in product.images.all %}
     <button class="thumbnail-btn">
@@ -43,6 +54,52 @@
     </button>
     {% endfor %}
   </div>
+  <!-- всплывающее окно -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" id="close-popup">&times;</span>
+      <p>
+        Спасибо, что выбрали нас!
+      </p>
+      <p>
+        Для оформления заказа перейдите в наш телеграм или инстаграм,
+        для связи с менеджером.
+      </p>
+      <bold>Важно!</bold>
+      <p>
+        Просим Вас ознакомиться с правилами 
+        доставки и оплаты, перед оформлением заказа.
+      </p>
+      <div class="social-links">
+        <a href="https://t.me/revada_miller" class="social-link" target="_blank">Telegram</a>
+        <a href="https://www.instagram.com/revada_miller?igshid=MWJrMG13ZzBrbnhvNQ==" class="social-link" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Открытие всплывающего окна при клике на кнопку "Заказать"
+    const orderBtn = document.getElementById('order-btn');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
+
+    orderBtn.addEventListener('click', function() {
+      popup.style.display = 'block';
+    });
+
+    // Закрытие всплывающего окна при клике на кнопку "Закрыть" или вне окна
+    closePopup.addEventListener('click', function() {
+      popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+      if (event.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- Операции с фото -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const currentImage = document.getElementById('current-image');
@@ -80,6 +137,12 @@
       const btnTop = (imageHeight - prevBtn.clientHeight) / 2;
       prevBtn.style.top = btnTop + 'px';
       nextBtn.style.top = btnTop + 'px';
+    });
+
+    // Добавление обработчика для кнопки "Вернуться в каталог"
+    const backToCatalogBtn = document.getElementById('back-to-catalog-btn');
+    backToCatalogBtn.addEventListener('click', function() {
+      window.location.href = "{% url 'shop:product_list' %}";
     });
     </script>
 {% endblock %}
