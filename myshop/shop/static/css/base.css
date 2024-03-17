@@ -182,6 +182,39 @@ ul.errorlist {
     line-height: 0.35em;
 }
 
+footer {
+    background-color: #ece1e1;;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .logo-container {
+    margin-right: 20px;
+  }
+  
+  .logo-footer {
+    width: 200px;
+    height: auto;
+}
+
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+
+  .social-icons {
+    font-family: 'description', sans-serif;
+    font-size: 20px;
+  }
+
 #subheader .cart {
     float:right;
     padding-top:4px;
@@ -270,16 +303,15 @@ ul.errorlist {
     text-align:justify;
     display: flex;
     font-family: 'ubuntu', sans-serif;
+    padding-left: 100px;
 }
 
-.product-info .product_name {
-    
-}
+
 
 .product-detail .image-container {
     position: relative;
     margin-right: 20px;
-    width: 560px;
+    width: 320px;
     margin-right: 20px;
     display: flex; /* Добавляем свойство display: flex; для размещения элементов в строку */
     align-items: center; /* Выравниваем элементы по вертикали */
@@ -287,7 +319,7 @@ ul.errorlist {
 }
 
 .product-detail .image-container img {
-    width: 35em; /* Например, ширина в 10 em */
+    width: 20em; /* Например, ширина в 10 em */
     height: auto;
     margin: 0 auto;
     padding:0 20px 20px 0;
@@ -296,8 +328,12 @@ ul.errorlist {
 }
 
 
+.thumbnails-container {
+    margin-left: 100px;
+}
+
 .thumbnail-btn img {
-    width: 5em; /* Устанавливаем ширину изображения */
+    width: 3em; /* Устанавливаем ширину изображения */
     height: auto; /* Высота автоматически подстраивается */
     margin: 0 auto; /* Выравниваем изображение по центру по горизонтали */
     padding: 0; /* Убираем отступы вокруг изображения */
@@ -337,9 +373,11 @@ ul.errorlist {
     padding-left: 30px;
 }
 
-.product-detail .product_name,
-.product-detail .price {
+.product_name,
+.price {
     font-weight: bold;
+    font-size: 30px;
+    font-family: 'ubuntu', sans-serif;
 }
 
 .order-form {
