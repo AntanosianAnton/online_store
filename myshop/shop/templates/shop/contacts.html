@@ -5,13 +5,19 @@
   Contacts
 {% endblock %}
 
+
 {% block content %}
-  <h1>Контакты</h1>
-  <p>
-    Мы в Telegram: <a href="https://t.me/revada_miller" class="contact-link" target="_blank">t.me/revada_miller</a>
-  </p>
-  <p>
-    Мы в Instagram: <a href="https://www.instagram.com/revada_miller?igsh=MWJrMG13ZzBrbnhvNQ==" class="contact-link" target="_blank">www.instagram.com/revada_miller</a>
-  </p>
-  <a href="/" class="btn" style="float: right; border: 1px solid #ccc;border-radius: 5px; padding: 10px 20px; background-color: #181212; color: #f3eeee;">Вернуться в каталог</a>
-  {% endblock %}
+  <div class="tg-img">
+    <a href="https://t.me/revada_miller" class="contact-link" target="_blank">
+      <img src="{% static 'img/telegram.jpg' %}" alt="Telegram">
+    </a>
+  </div>
+  <div class="insta-img">
+    <a href="https://www.instagram.com/revada_miller?igshid=MWJrMG13ZzBrbnhvNQ==" class="contact-link" target="_blank">
+      <img src="{% static 'img/insta.jpg' %}" alt="Instagram">
+    </a>
+  </div>
+  <div class="back-btn">
+      <a href="/" class="btn" style="float: right; border: 1px solid #ccc;border-radius: 5px; padding: 10px 20px; background-color: #181212; color: #f3eeee;">Вернуться в каталог</a>
+  </div>
+{% endblock %}
