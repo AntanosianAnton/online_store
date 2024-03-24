@@ -9,19 +9,19 @@
 
 @font-face {
     font-family: 'dostavka';
-    src: url(fonts/Inkverse-BWDRx.ttf);
+    src: url(fonts/Bicubik.OTF);
 }
 
 @font-face {
     font-family: 'description';
-    src: url(fonts/Project\ Space.ttf);
+    src: url(fonts/Bicubik.OTF);
 }
 
 body {
     margin:0;
     padding:0;
     font-family:'Rowdies', sans-serif;
-    background-color: #ece1e1;
+    background-color: #ffffff;
 }
 
 h1, h2, h3, h4, h5 , h6 {
@@ -156,14 +156,17 @@ ul.errorlist {
     display: inline-block;
     color: #333;
     text-decoration: none;
-    margin-left: 20px;
-    font-family: 'description', sans-serif; /* Use your desired font */
+    margin-left: 100px;
+    margin-right: 140px;
+    font-family: 'dostavka', sans-serif; /* Use your desired font */
+    font-size: 20px;
+    font-weight: bold;
 }
 
 
 
 #header .header-link:hover {
-    color: #5993bb;
+    color: #e5721b;
 }
 
 #subheader {
@@ -183,7 +186,7 @@ ul.errorlist {
 }
 
 footer {
-    background-color: #ece1e1;;
+    background-color: #ffffff;;
     padding-top: 15px;
     text-align: center;
   }
@@ -221,7 +224,7 @@ footer {
 }
 
 #content {
-    padding:0 100px;
+    padding:20px 10px;
     overflow:hidden;
 }
 
@@ -257,7 +260,7 @@ footer {
 
 #main {
     float:center;
-    width: 96%;
+    width: 100%;
     margin-right:auto;
     overflow:hidden;
 }
@@ -283,10 +286,19 @@ footer {
     line-height: 1.2;
 }
 
+.product-list .image-container {
+    width: 360px;
+    height: 400px;
+    overflow: hidden;
+    position: static;
+    padding-left: 100px;
+
+  }
+
 .product-list .item img {
     /* width:100%; */
-    width: 20em; /* Например, ширина в 10 em */
-    height: auto;
+    width: 360px; /* Например, ширина в 10 em */
+    height: 520px;
     margin-bottom: 10px;
     border-radius: 20px;
 }
@@ -302,7 +314,7 @@ footer {
 .product-detail {
     text-align:justify;
     display: flex;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'description', sans-serif;
     padding-left: 100px;
 }
 
@@ -311,7 +323,8 @@ footer {
 .product-detail .image-container {
     position: relative;
     margin-right: 20px;
-    width: 320px;
+    width: 340px;
+    height: 520px;
     margin-right: 20px;
     display: flex; /* Добавляем свойство display: flex; для размещения элементов в строку */
     align-items: center; /* Выравниваем элементы по вертикали */
@@ -319,8 +332,8 @@ footer {
 }
 
 .product-detail .image-container img {
-    width: 20em; /* Например, ширина в 10 em */
-    height: auto;
+    width: 340px;
+    height: 520px;
     margin: 0 auto;
     padding:0 20px 20px 0;
     margin-bottom:none;
@@ -333,10 +346,11 @@ footer {
 }
 
 .thumbnail-btn img {
-    width: 3em; /* Устанавливаем ширину изображения */
-    height: auto; /* Высота автоматически подстраивается */
+    width: 30px; /* Устанавливаем ширину изображения */
+    height: 45px; /* Высота автоматически подстраивается */
     margin: 0 auto; /* Выравниваем изображение по центру по горизонтали */
     padding: 0; /* Убираем отступы вокруг изображения */
+    padding-top: 0;
     margin-bottom: none; /* Убираем нижний отступ */
     border-radius: 5px; /* Устанавливаем скругление углов */
 }
@@ -377,7 +391,7 @@ footer {
 .price {
     font-weight: bold;
     font-size: 30px;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'description', sans-serif;
 }
 
 /* Стили для кнопки "Заказать" */
