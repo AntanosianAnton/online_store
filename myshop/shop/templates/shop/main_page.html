@@ -1,0 +1,27 @@
+{% extends "shop/base.html" %}
+{% load static %}
+<head>
+
+</head>
+{% block content %}
+<body>
+    <div class="pic-container">
+        <div class="pic">
+            <img src="{% static 'img/1.JPG' %}" alt="mnpc-1">
+        </div>
+        <div class="pic">
+            <img src="{% static 'img/4.JPG' %}" alt="mnpc-1">
+        </div>
+        <div class="pic">
+            <img src="{% static 'img/3.JPG' %}" alt="mnpc-1">
+        </div>
+        <div class="pic">
+            <img src="{% static 'img/7.JPG' %}" alt="mnpc-1">
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a href="{% url 'shop:product_list' %}" class="collection-link">Подробнее</a>
+    </div>
+</body>
+{% endblock %}

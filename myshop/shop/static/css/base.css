@@ -137,11 +137,13 @@ ul.errorlist {
 
 
 #header {
-    padding:10px 0;
-    font-size:20px;
-    overflow:auto;
-    text-align: center;
-    font-family: 'Revada_Zagolovok', sans-serif; /* Use your desired font */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Цвет фона заголовка */
+    z-index: 1000;
+    border-bottom: 1px solid #ccc; 
 
 }
 
@@ -161,6 +163,7 @@ ul.errorlist {
     font-family: 'dostavka', sans-serif; /* Use your desired font */
     font-size: 20px;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 
@@ -178,11 +181,24 @@ ul.errorlist {
 
 #header .logo {
     font-family: 'Revada_Zagolovok', sans-serif;
-    float:center;
+    float:left;
     color:#333;
     font-size:50px;
     margin-bottom: 1;
     line-height: 0.35em;
+}
+ .head-logo-container {
+    margin-right: 20px;
+    margin-left: 50px;
+    margin-top: 5px;
+    float: left;
+    width: 200px;
+    height: auto;
+}
+
+/* Добавьте отступ сверху, чтобы предотвратить перекрытие содержимого */
+body {
+    padding-top: 80px; /* Высота заголовка */
 }
 
 footer {
@@ -264,6 +280,55 @@ footer {
     margin-right:auto;
     overflow:hidden;
 }
+
+.pic-container {
+    display: flex;
+    flex-wrap: wrap; /* Разрешает перенос строк */
+    justify-content: space-between; /* Равномерное распределение пространства между элементами */
+    margin: 10px auto; /* Центрирование контейнера */
+    max-width: 100%; /* Максимальная ширина равна ширине родительского контейнера */
+}
+
+.pic-container .pic {
+    width: calc(50% - 10px); /* Ширина каждой картинки (50% минус отступ между ними) */
+    margin-bottom: 20px; /* Отступ между рядами */
+    border-radius: 20px; /* Закругление углов */
+}
+
+.pic-container .pic img {
+    width: 100%; /* Заполнение всей ширины родительского контейнера */
+    height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
+}
+
+
+@media (max-width: 768px) {
+    .pic {
+        width: 100%; /* Картинки занимают всю ширину в мобильном виде */
+        margin-bottom: 10px; /* Меньший отступ между картинками */
+    }
+}
+/* кнопка подробнее на глвной стр */
+.button-container {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-family: 'description', sans-serif;
+}
+
+.collection-link {
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    text-decoration: underline;
+    transition: font-size 0.2s; /* Добавлено плавное изменение размера */
+}
+
+.collection-link:hover {
+    font-size: 1.1em; /* Увеличение размера на 10% при наведении */
+}
+
 
 .product-list {
     display: grid;

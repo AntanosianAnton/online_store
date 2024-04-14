@@ -43,3 +43,7 @@ def contacts(request):
 
 def exchange_return(request):
     return render(request, 'shop/exchange_return.html')
+
+
+def main_page(request):
+    return render(request, 'shop/main_page.html')
