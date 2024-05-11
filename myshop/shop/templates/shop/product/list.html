@@ -30,7 +30,7 @@
               <img class="product-image" src="{{ product.images.all.0.image.url }}" alt="{{ product.name }}">
               <img class="product-hover-image" src="{{ product.images.all.1.image.url }}" alt="{{ product.name }}">
             </div>
-        {% else %}
+          {% else %}
             <img src="{% static 'img/no_image.png' %}" alt="No image">
           {% endif %}
         </a>

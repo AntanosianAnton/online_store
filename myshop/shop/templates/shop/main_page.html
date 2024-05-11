@@ -5,6 +5,9 @@
 </head>
 {% block content %}
 <body>
+    <div class="text-container">
+        <p class="main-text">REVADA miller - бренд одежды</p>
+    </div>
     <div class="pic-container">
         <div class="pic">
             <img src="{% static 'img/1.JPG' %}" alt="mnpc-1">
@@ -21,7 +24,7 @@
     </div>
 
     <div class="button-container">
-        <a href="{% url 'shop:product_list' %}" class="collection-link">Подробнее</a>
+        <a href="{% url 'shop:product_list' %}" class="collection-link">Перейти к коллекции</a>
     </div>
 </body>
 {% endblock %}
