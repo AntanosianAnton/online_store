@@ -137,47 +137,39 @@ ul.errorlist {
 
 
 #header {
+    display: flex; /* Располагаем элементы внутри header в ряд */
+    justify-content: space-around; /* Равномерно распределяем пространство между элементами */
+    align-items: center; /* Выравниваем элементы по вертикали по центру */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px;
     background-color: white; /* Цвет фона заголовка */
     z-index: 1000;
     border-bottom: 1px solid #ccc; 
-
 }
 
-#header .header-links {
-    float: center;
-    margin-top: 10px;
-    
-
+/* Стили для ссылок в header */
+.header-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: black; /* Цвет текста */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    font-size: 20px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    font-family: 'description', sans-serif;
 }
 
-#header .header-link {
-    display: inline-block;
-    color: #333;
-    text-decoration: none;
-    margin-left: 90px;
-    margin-right: 140px;
-    font-family: 'dostavka', sans-serif; /* Use your desired font */
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
+.header-link:hover {
+    color: gray; /* Цвет текста при наведении */
 }
 
-
-
-#header .header-link:hover {
-    color: #e5721b;
-}
-
-#subheader {
+/* #subheader {
     background:#ececec;
     color:#444;
     padding:15px 100px;
     overflow:auto;
-}
+} */
 
 #header .logo {
     font-family: 'Revada_Zagolovok', sans-serif;
@@ -242,6 +234,7 @@ footer {
 #content {
     padding:20px 10px;
     overflow:hidden;
+
 }
 
 /* #sidebar {
@@ -302,16 +295,29 @@ footer {
 }
 
 
-@media (max-width: 768px) {
-    .pic {
-        width: 100%; /* Картинки занимают всю ширину в мобильном виде */
-        margin-bottom: 10px; /* Меньший отступ между картинками */
+@media only screen and (max-width: 428px) {
+    /* Стили для разрешения экрана шириной до 414px (iPhone 11 и подобные) */
+    .text-container {
+        top: 10%; /* Перераспределите расположение текста */
+        font-size: 30px; /* Уменьшите размер шрифта */
+    }
+
+    .main-text {
+        font-size: 40px; /* Уменьшите размер шрифта для основного текста */
+    }
+
+    .sec-text {
+        font-size: 16px; /* Уменьшите размер шрифта для вторичного текста */
+    }
+
+    .pic-container .pic {
+        width: 100%; /* Картинки должны занимать всю ширину на маленьких экранах */
     }
 }
 
 .text-container {
     position: absolute;
-    top: 17%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -322,8 +328,17 @@ footer {
 
 .main-text {
     font-family: 'description', sans-serif;
-    text-align: left; /* Выравнивание по центру */
+    text-align: center; /* Выравнивание по центру */
     font-size: 50px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    width: 100%; /* Выравнивание по ширине */
+    margin-bottom: 5px;
+}
+
+.sec-text {
+    font-family: 'description', sans-serif;
+    text-align: center; /* Выравнивание по центру */
+    font-size: 20px; /* Размер шрифта */
     font-weight: bold; /* Жирный шрифт */
     width: 100%; /* Выравнивание по ширине */
 }
@@ -379,6 +394,10 @@ footer {
 .product-list .item {
     text-align: center;
     line-height: 1.2;
+    display: block;
+    width: 360px;
+    height: auto;
+    padding-left: 15%;
 }
 
 .product-list .image-container {
@@ -386,14 +405,19 @@ footer {
     height: 400px;
     overflow: hidden;
     position: static;
-    padding: left 80px;
-
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;
+    display: flex; 
   }
 
+
+.product-list .description-container {
+    text-align: center;
+}
+
 .product-list .item img {
-    /* width:100%; */
-    width: 360px; /* Например, ширина в 10 em */
-    height: 520px;
+    width: 100%; /* Например, ширина в 10 em */
+    height: 120%;
     margin-bottom: 10px;
     border-radius: 20px;
 }

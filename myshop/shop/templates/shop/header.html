@@ -5,9 +5,13 @@
           <img src="{% static 'css/icons/logo-footer.png' %}" alt="Logo" class="logo-footer">
       </a>
     </div>
-    <div class="header-links">
-      <a href="{% url 'shop:delivery_payments' %}" class="header-link">Доставка & оплата</a>
+    <div class="header-delivery">
+      <a href="{% url 'shop:delivery_payments' %}" class="header-link">Доставка и оплата</a>
+    </div>
+    <div class="header-contacts">
       <a href="{% url 'shop:contacts' %}" class="header-link">О нас</a>
-      <a href="{% url 'shop:exchange_return' %}" class="header-link">Возврат & Обмен</a>
+    </div>
+    <div class="header-exchange">
+      <a href="{% url 'shop:exchange_return' %}" class="header-link">Возврат и обмен</a>
     </div>
   </div>
