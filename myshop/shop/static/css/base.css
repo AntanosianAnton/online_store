@@ -158,6 +158,8 @@ ul.errorlist {
     font-size: 20px; /* Размер шрифта */
     font-weight: bold; /* Жирный шрифт */
     font-family: 'description', sans-serif;
+    
+    display: block; /* Выравниваение текста по левому краю при мобильном экране */
 }
 
 .header-link:hover {
@@ -316,14 +318,15 @@ footer {
 }
 
 .text-container {
-    position: absolute;
+    /* position: absolute;
     top: 20%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     opacity: 0;
     animation: fadeIn 2s forwards;
-    z-index: 1; /* Чтобы text-container был над pic-container */
+    //z-index: 1; /* Чтобы text-container был над pic-container */
     width: max-content;
+    margin: 0 auto; // фикс наложения текста но картинки
 }
 
 .main-text {
@@ -384,6 +387,12 @@ footer {
     justify-content: space-around;
 }
 
+@media only screen and (max-width: 1200px){
+    .product-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .product-list h1 {
     margin: 0 auto; /* Центрируем элемент по горизонтали */
     text-align: center; /* Выравниваем текст по центру */
@@ -397,7 +406,8 @@ footer {
     display: block;
     width: 360px;
     height: auto;
-    padding-left: 15%;
+    /* padding-left: 15%; */
+    margin: 0 auto; // расположение карточек товаров четко по центру своих блоков
 }
 
 .product-list .image-container {
@@ -472,6 +482,7 @@ footer {
     padding-top: 0;
     margin-bottom: none; /* Убираем нижний отступ */
     border-radius: 5px; /* Устанавливаем скругление углов */
+    cursor: pointer;
 }
 
 .product-detail #prev-btn,
@@ -488,6 +499,7 @@ footer {
     width: 30px;
     height: 45px;
     margin-top: 0px;
+    cursor: pointer;
 }
 
 .product-detail #prev-btn {
