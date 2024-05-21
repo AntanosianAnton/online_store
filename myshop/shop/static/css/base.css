@@ -206,6 +206,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 40px;
   }
   
   .logo-container {
@@ -268,6 +269,53 @@ footer {
 #sidebar ul li.selected a {
     color:#fff;
 } */
+
+.delivery-container,
+.payment-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.delivery-container h1,
+.payment-container h2 {
+  margin-bottom: 10px;
+  font-family: 'description', sans-serif;
+  font-size: 25px;
+}
+
+.delivery-text,
+.payment-text {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'description', sans-serif;
+  color: #333;
+}
+
+.contact-link {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.contact-link:hover {
+  color: #004999;
+}
+
+.return-btn {
+  float: right;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #181212;
+  color: #f3eeee;
+  text-decoration: none;
+}
+
+.return-btn:hover {
+  background-color: #333;
+}
 
 #main {
     float:center;
