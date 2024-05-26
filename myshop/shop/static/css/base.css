@@ -666,13 +666,13 @@ footer {
 .insta-img {
   padding-left: 440px; /* Отступ справа от контейнера */
   float: left;
-  width: 320px; /* Ширина контейнера */
+  width: 20em; /* Ширина контейнера */
   height: auto; /* Высота контейнера */
 }
 
 /* Стили для изображения в контейнере Instagram */
 .insta-img img {
-  width: 320px; /* Ширина изображения */
+  width: 20em; /* Ширина изображения */
   height: auto; /* Автоматическая высота для сохранения пропорций */
 }
   
@@ -690,7 +690,78 @@ footer {
   height: auto; /* Автоматическая высота для сохранения пропорций */
 }
 
+/* стили для страницы возврата и обмена */
 
+.exchange-return-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin: 20px;
+    font-family: 'description', sans-serif;
+  }
+  
+  .exchange-return-container h1,
+  .exchange-return-container h2 {
+    margin-bottom: 10px;
+    font-family: 'description', sans-serif;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+  
+  .section .content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .section ol {
+    padding-left: 20px;
+    font-family: 'description', sans-serif;
+  }
+  
+  .section li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    font-family: 'description', sans-serif;
+  }
+  
+  .contact-link {
+    color: #0066cc;
+    text-decoration: underline;
+  }
+  
+  .contact-link:hover {
+    color: #004999;
+  }
+  
+  .important-note {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #d9534f;
+    margin-bottom: 20px;
+  }
+  
+  .return-btn {
+    float: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #181212;
+    color: #f3eeee;
+    text-decoration: none;
+  }
+  
+  .return-btn:hover {
+    background-color: #333;
+  }
 
 
 /* все что ниже пока Не используется  */
