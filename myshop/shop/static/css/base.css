@@ -664,7 +664,7 @@ footer {
 
 
 .insta-img {
-  padding-left: 440px; /* Отступ справа от контейнера */
+  padding-left: 350px; /* Отступ справа от контейнера */
   float: left;
   width: 20em; /* Ширина контейнера */
   height: auto; /* Высота контейнера */
@@ -679,7 +679,7 @@ footer {
   /* Стили для контейнера Instagram */
 .tg-img {
   float: right;
-  padding-right: 440px; /* Отступ справа от контейнера */
+  padding-right: 350px; /* Отступ справа от контейнера */
   width: 320px;
   height: auto;
   
@@ -688,6 +688,18 @@ footer {
 .tg-img img {
   width: 320px; /* Ширина изображения */
   height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+.about_text-container {
+    right: 20px;
+    width: 200px;
+    text-align: right;
+}
+
+.about_text-container .about_text {
+    font-family: 'arial', sans-serif;
+    font-size: 16px;
+    color: #333;
 }
 
 /* стили для страницы возврата и обмена */
