@@ -664,10 +664,9 @@ footer {
 
 
 .insta-img {
-  padding-left: 350px; /* Отступ справа от контейнера */
-  float: left;
   width: 20em; /* Ширина контейнера */
   height: auto; /* Высота контейнера */
+  margin-right: 10em;
 }
 
 /* Стили для изображения в контейнере Instagram */
@@ -675,31 +674,82 @@ footer {
   width: 20em; /* Ширина изображения */
   height: auto; /* Автоматическая высота для сохранения пропорций */
 }
-  
+
   /* Стили для контейнера Instagram */
 .tg-img {
-  float: right;
-  padding-right: 350px; /* Отступ справа от контейнера */
   width: 320px;
   height: auto;
-  
+  margin-left: 10em;
+
 }
+
 
 .tg-img img {
   width: 320px; /* Ширина изображения */
   height: auto; /* Автоматическая высота для сохранения пропорций */
 }
 
+.socials{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .about_text-container {
-    right: 20px;
-    width: 200px;
-    text-align: right;
+
+    width: 100%;
 }
 
 .about_text-container .about_text {
-    font-family: 'arial', sans-serif;
-    font-size: 16px;
+    font-family: 'dostavka', sans-serif;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10em;
+    margin-top: 5em;
+    font-size: 1vw;
     color: #333;
+    line-height: 1.7;
+}
+.about_text-container .about_text div{
+    width: 25%;
+    text-align: justify;
+    margin: 0 5em;
+    opacity: 0;
+    transform: translateX(-5em);
+    transition: transform 1s, opacity 1s;
+}
+.about_text-container .about_text div.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+.about_text-container .about_text img{
+    width: 25%;
+    margin: 0 5em;
+    opacity: 0;
+    transform: translateX(5em);
+    transition: transform 1s, opacity 1s;
+}
+.about_text-container .about_text img.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+.back-btn{
+    text-align: right;
+    padding-right: 5em;
+    margin-top: 5em;
+}
+.btn{
+    font-family: 'dostavka', sans-serif;
+}
+.btn:hover{
+    color: #77b6e2 !important;
+}
+@media only screen and (max-width: 770px) {
+    .about_text-container .about_text{
+        flex-direction: column;
+    }
 }
 
 /* стили для страницы возврата и обмена */
@@ -711,13 +761,13 @@ footer {
     margin: 20px;
     font-family: 'description', sans-serif;
   }
-  
+
   .exchange-return-container h1,
   .exchange-return-container h2 {
     margin-bottom: 10px;
     font-family: 'description', sans-serif;
   }
-  
+
   .section {
     margin-bottom: 20px;
     padding: 15px;
@@ -725,18 +775,18 @@ footer {
     border-radius: 5px;
     background-color: #ffffff;
   }
-  
+
   .section .content {
     font-size: 16px;
     line-height: 1.6;
     color: #333;
   }
-  
+
   .section ol {
     padding-left: 20px;
     font-family: 'description', sans-serif;
   }
-  
+
   .section li {
     margin-bottom: 10px;
     font-size: 16px;
@@ -744,23 +794,23 @@ footer {
     color: #333;
     font-family: 'description', sans-serif;
   }
-  
+
   .contact-link {
     color: #0066cc;
     text-decoration: underline;
   }
-  
+
   .contact-link:hover {
     color: #004999;
   }
-  
+
   .important-note {
     font-size: 16px;
     line-height: 1.6;
     color: #d9534f;
     margin-bottom: 20px;
   }
-  
+
   .return-btn {
     float: right;
     border: 1px solid #ccc;
@@ -769,6 +819,7 @@ footer {
     background-color: #181212;
     color: #f3eeee;
     text-decoration: none;
+
   }
   
   .return-btn:hover {

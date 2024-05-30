@@ -8,20 +8,36 @@
 
 {% block content %}
 <div class="about_text-container">
-  <p class="about_text">
-    <strong>REVADA miller</strong> – российский бренд одежды, в основе которого лежит сочетание современного дизайна в стиле streetwear, практичности и комфорта. 
-    Бренд основан в 2024 году. Производство всех изделий осуществляется в Москве.
-    <br><br>
-    ДНК бренда: универсальный лайфстайл гардероб для современных городских жителей, кто ценит комфорт и самовыражение.
-    Миссия бренда — задать свой стиль и свою индивидуальность в моде, а также вдохновлять людей быть уверенными в себе и выражать свою уникальность через стиль.
-    <br><br>
-    В одежде мы ценим сочетание минимализма с удобством и функциональностью: выбирая лаконичный крой, не забываем о вашем комфорте и тщательно продумываем детали. Каждая вещь изготовлена из высококачественных материалов, обеспечивающих долговечность и комфорт.
-    Наш бренд для людей, ценящих высокое качество и безупречный стиль как в повседневной жизни, так и в одежде.
-    <br><br>
-    Название <strong>REVADA miller</strong> – было придумано основателем бренда, где «miller» — это фамилия, а «REVADA» - аббревиатура членов его семьи.
-    Семья — это основа общества, главная ценность в жизни каждого человека, источник любви и вдохновения.
-  </p>
+  <div class="about_text">
+    <div class="about_text_content">
+        <strong>REVADA miller</strong> – российский бренд одежды, в основе которого лежит сочетание современного дизайна в стиле streetwear, практичности и комфорта.
+      Бренд основан в 2024 году. Производство всех изделий осуществляется в Москве.
+    </div>
+    <img src="{% static 'img/about1.png' %}"/>
 </div>
+    <div class="about_text">
+        <img src="{% static 'img/about2.jpg' %}"/>
+        <div class="about_text_content">
+            <strong>ДНК бренда:</strong> универсальный лайфстайл гардероб для современных городских жителей, кто ценит комфорт и самовыражение.
+            Миссия бренда — задать свой стиль и свою индивидуальность в моде, а также вдохновлять людей быть уверенными в себе и выражать свою уникальность через стиль.
+        </div>
+</div>
+  <div class="about_text">
+        <div class="about_text_content">
+            В одежде <strong>мы ценим</strong>> сочетание минимализма с удобством и функциональностью: выбирая лаконичный крой, не забываем о вашем комфорте и тщательно продумываем детали. Каждая вещь изготовлена из высококачественных материалов, обеспечивающих долговечность и комфорт.
+            Наш бренд для людей, ценящих высокое качество и безупречный стиль как в повседневной жизни, так и в одежде.
+        </div>
+      <img src="{% static 'img/about3.jpg' %}"/>
+</div>
+      <div class="about_text">
+          <img src="{% static 'img/about4.jpg' %}"/>
+        <div class="about_text_content">
+            Название <strong>REVADA miller</strong> – было придумано основателем бренда, где «miller» — это фамилия, а «REVADA» - аббревиатура членов его семьи.
+            Семья — это основа общества, главная ценность в жизни каждого человека, источник любви и вдохновения.
+        </div>
+  </div>
+</div>
+    <div class="socials">
   <div class="tg-img">
     <a href="https://t.me/revada_miller" class="contact-link" target="_blank">
       <img src="{% static 'img/telegram.jpg' %}" alt="Telegram">
@@ -32,7 +48,31 @@
       <img src="{% static 'img/insta.jpg' %}" alt="Instagram">
     </a>
   </div>
+    </div>
   <div class="back-btn">
-      <a href="{% url 'shop:product_list' %}" class="btn" style="float: right; border: 1px solid #ccc;border-radius: 5px; padding: 10px 20px; background-color: #181212; color: #f3eeee;">Вернуться в каталог</a>
+      <a href="{% url 'shop:product_list' %}" class="btn" style="border: 1px solid #ccc;border-radius: 5px; padding: 10px 20px; background-color: #181212; color: #f3eeee;">Вернуться в каталог</a>
   </div>
+<script>
+    function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+     change.target.classList.add('show');
+    }
+  });
+}
+
+let options = {
+  threshold: [0.5] };
+let observer = new IntersectionObserver(onEntry, options);
+let elements = document.querySelectorAll('img');
+let textEls = document.querySelectorAll('.about_text_content')
+
+for (let elm of elements) {
+  observer.observe(elm);
+}
+for (let elm of textEls) {
+  observer.observe(elm);
+}
+
+</script>
 {% endblock %}
