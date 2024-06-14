@@ -35,10 +35,16 @@
         <input type="submit" value="Add to cart">
       </form> -->
 
+      <!-- кнопка посмотреть размер -->
+      <div class="size-button">
+        <button id="size-btn">Посмотреть размер</button>
+      </div>
+
       <!-- кнопка заказать -->
       <div class="order-button">
         <button id="order-btn">Заказать</button>
       </div>
+    
       <!-- кнопка вернуться в каталог -->
       <div class="back-to-catalog-btn">
         <button id="back-to-catalog-btn">Вернуться в каталог</button>
@@ -77,6 +83,14 @@
     </div>
   </div>
 
+  <!-- контейнер для изображения размеров -->
+  <div id="size-popup" class="popup">
+    <div class="popup-content">
+      <span class="close" id="close-size-popup">&times;</span>
+      <img src="{% static 'img/size-chart.jpg' %}" alt="Size Chart" id="size-chart">
+    </div>
+  </div>
+
   <script>
     // Открытие всплывающего окна при клике на кнопку "Заказать"
     const orderBtn = document.getElementById('order-btn');
@@ -97,7 +111,28 @@
         popup.style.display = 'none';
       }
     });
+
+    // Открытие всплывающего окна с размером
+    const sizeBtn = document.getElementById('size-btn');
+    const sizePopup = document.getElementById('size-popup');
+    const closeSizePopup = document.getElementById('close-size-popup');
+
+    sizeBtn.addEventListener('click', function() {
+      sizePopup.style.display = 'block';
+    });
+
+    closeSizePopup.addEventListener('click', function() {
+      sizePopup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+      if (event.target === sizePopup) {
+        sizePopup.style.display = 'none';
+      }
+    });
   </script>
+
+  
 
   <!-- Операции с фото -->
   <script>

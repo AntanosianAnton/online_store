@@ -580,6 +580,17 @@ footer {
     margin-top: 20px;
   }
   
+#size-btn {
+    background-color: #040904;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    }
+
+
   /* Стили для всплывающего окна */
   .popup {
     display: none;
@@ -594,13 +605,13 @@ footer {
   
   .popup-content {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
     position: absolute;
-    top: 50%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 340px;
     font-size: 20px;
     font-family: 'ubuntu', sans-serif;
   }
@@ -620,6 +631,11 @@ footer {
     cursor: pointer;
   }
   
+  #size-chart {
+    width: 340px;
+    height: 520px;
+}
+
   .social-links {
     margin-top: 20px;
     text-align: center;
