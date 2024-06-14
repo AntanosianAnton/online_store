@@ -435,11 +435,7 @@ footer {
     justify-content: space-around;
 }
 
-@media only screen and (max-width: 1200px){
-    .product-list{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+
 
 .product-list h1 {
     margin: 0 auto; /* Центрируем элемент по горизонтали */
@@ -711,6 +707,7 @@ footer {
     font-size: 1vw;
     color: #333;
     line-height: 1.7;
+
 }
 .about_text-container .about_text div{
     width: 25%;
@@ -725,7 +722,7 @@ footer {
     transform: translateX(0);
 }
 .about_text-container .about_text img{
-    width: 25%;
+    width: 25vw;
     margin: 0 5em;
     opacity: 0;
     transform: translateX(5em);
@@ -746,9 +743,35 @@ footer {
 .btn:hover{
     color: #77b6e2 !important;
 }
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 480px){
     .about_text-container .about_text{
+         flex-direction: column;
+    }
+    .about_text-container .about_text div{
+        margin: 0;
+        width: 90%;
+        font-size: 3vw;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .about_text-container .about_text img{
+        margin: 2vw 0;
+        width: 100%;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .socials{
         flex-direction: column;
+        margin: 0;
+    }
+    .socials div{
+        margin: 0 auto;
+
+    }
+}
+@media only screen and (max-width: 1200px){
+    .product-list{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
