@@ -160,6 +160,9 @@ ul.errorlist {
     font-family: 'description', sans-serif;
     
     display: block; /* Выравниваение текста по левому краю при мобильном экране */
+    @media only screen and (max-width: 1000px){
+        font-size: 3vw;
+    }
 }
 
 .header-link:hover {
@@ -185,10 +188,23 @@ ul.errorlist {
     margin-right: 20px;
     margin-left: 50px;
     margin-top: 5px;
+    @media only screen and (max-width: 1000px){
+        margin-right: 5vw;
+        margin-left: 5vw;
+        margin-top: 5px;
+    }
     float: left;
-    width: 200px;
+    width: 15vw;
     height: auto;
 }
+.logo-footer {
+    width: 200px;
+    height: auto;
+    @media only screen and (max-width: 1000px){
+        width: 20vw;
+    }
+}
+
 
 /* Добавьте отступ сверху, чтобы предотвратить перекрытие содержимого */
 body {
@@ -213,10 +229,7 @@ footer {
     margin-right: 20px;
   }
   
-  .logo-footer {
-    width: 200px;
-    height: auto;
-}
+
 
   .social-icons img {
     width: 40px;
@@ -384,6 +397,9 @@ footer {
     font-weight: bold; /* Жирный шрифт */
     width: 100%; /* Выравнивание по ширине */
     margin-bottom: 5px;
+    @media only screen and (max-width: 1000px){
+        font-size: 5vw;
+    }
 }
 
 .sec-text {
@@ -392,6 +408,10 @@ footer {
     font-size: 20px; /* Размер шрифта */
     font-weight: bold; /* Жирный шрифт */
     width: 100%; /* Выравнивание по ширине */
+    overflow-wrap: wrap;
+    @media only screen and (max-width: 1000px){
+        font-size: 2vw;
+    }
 }
 
 @keyframes fadeIn {
@@ -419,6 +439,9 @@ footer {
     font-size: inherit;
     text-decoration: underline;
     transition: font-size 0.2s; /* Добавлено плавное изменение размера */
+    @media only screen and (max-width: 700px){
+        font-size: 2vw;
+    }
 }
 
 .collection-link:hover {
@@ -461,7 +484,7 @@ footer {
     position: static;
     justify-content: center; /* Центрирование по горизонтали */
     align-items: center;
-    display: flex; 
+    display: flex;
   }
 
 
@@ -488,19 +511,16 @@ footer {
     text-align:justify;
     display: flex;
     font-family: 'description', sans-serif;
-    padding-left: 100px;
+    @media only screen and (max-width: 770px){
+        flex-direction: column;
+    }
 }
-
-
 
 .product-detail .image-container {
     position: relative;
-    margin-right: 20px;
     width: 340px;
     height: 520px;
-    margin-right: 20px;
-    display: flex; /* Добавляем свойство display: flex; для размещения элементов в строку */
-    align-items: center; /* Выравниваем элементы по вертикали */
+    margin: 0 auto;
 
 }
 
@@ -511,11 +531,6 @@ footer {
     padding:0 20px 20px 0;
     margin-bottom:none;
     border-radius: 50px;
-}
-
-
-.thumbnails-container {
-    margin-left: 100px;
 }
 
 .thumbnail-btn img {
@@ -545,9 +560,18 @@ footer {
     margin-top: 0px;
     cursor: pointer;
 }
+.preview-image{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    flex: .4;
+}
 
 .product-detail #prev-btn {
     left: 0; /* Кнопка назад прижимается к левому краю контейнера */
+}
+.thumbnails-container{
+    text-align: center;
 }
 
 .product-detail #next-btn {
@@ -555,11 +579,8 @@ footer {
 }
 
 .product-detail .product-info {
-    flex: 1; /* Растягиваем этот блок на всю доступную ширину */
-    margin-right: 20px; /* Отступ справа от product image */
+    flex: .6;
     text-align: left;
-    width: 500px;
-    padding-left: 30px;
 }
 
 .product_name,
