@@ -19,6 +19,7 @@ services:
     # запросы с внешнего порта 80 перенаправляем на внутренний порт 80
     ports:
       - "80:80"
+      - "443:443"
 
     volumes:
       # При сборке скопировать созданный конфиг nginx из исходной директории 
@@ -32,12 +33,21 @@ services:
       # Данные, хранящиеся в томе media_value, будут доступны в контейнере nginx
       # через директорию /var/html/media/
       - media_value:/var/html/media/
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+      - ./var/html:/var/html
 
     depends_on:
       # Контейнер nginx должен быть запущен после контейнера web
       - web
 
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+      - ./var/html:/var/html
+
 volumes:
-  # Новые тома 
   static_value:
   media_value:

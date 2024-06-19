@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o5#zr-$w&&o1qj%z+ma#=gizy!zoy-o3xqj04r8e#_&b_5wjb9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://*.revadamiller.ru']
+CSRF_TRUSTED_ORIGINS = ['https://*.revadamiller.ru']
 
 
 # Application definition
