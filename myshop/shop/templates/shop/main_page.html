@@ -9,6 +9,9 @@
         <p class="main-text">REVADA miller</p>
         <p class="sec-text">стиль, качество и комфорт для твоего идеального образа</p>
     </div>
+    <div class="button-container">
+        <a href="{% url 'shop:product_list' %}" class="collection-link">Перейти к коллекции</a>
+    </div>
     <div class="pic-container">
         <div class="pic">
             <img src="{% static 'img/1.JPG' %}" alt="mnpc-1">
@@ -24,8 +27,6 @@
         </div>
     </div>
 
-    <div class="button-container">
-        <a href="{% url 'shop:product_list' %}" class="collection-link">Перейти к коллекции</a>
-    </div>
+
 </body>
 {% endblock %}

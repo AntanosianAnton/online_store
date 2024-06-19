@@ -8,10 +8,22 @@
 
 {% block content %}
   <div class="product-detail">
-    <div class="image-container">
+    <div class="preview-image">
+      <div class="image-container">
       <img id="current-image" src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
       <button id="prev-btn">&lt;</button>
       <button id="next-btn">&gt;</button>
+    </div>
+
+    <!-- миниатюры для фото -->
+    <div class="thumbnails-container">
+      {% for image in product.images.all %}
+      <button class="thumbnail-btn">
+        <img src="{{ image.image.url }}" alt="{{ product.name }}" width="200" height="200">
+      </button>
+      {% endfor %}
+    </div>
+
     </div>
     <!-- <div class="thumbnails-container">
       {% for image in product.images.all %}
@@ -51,15 +63,7 @@
       </div>
     </div>
   </div>
-  
-  <!-- миниатюры для фото -->
-  <div class="thumbnails-container">
-    {% for image in product.images.all %}
-    <button class="thumbnail-btn">
-      <img src="{{ image.image.url }}" alt="{{ product.name }}" width="200" height="200">
-    </button>
-    {% endfor %}
-  </div>
+
   <!-- всплывающее окно -->
   <div id="popup" class="popup">
     <div class="popup-content">
