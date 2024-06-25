@@ -9,7 +9,7 @@ services:
         - /etc/letsencrypt/live/revadamiller.ru/:/etc/letsencrypt/live/revadamiller.ru/
         - static_value:/app/static/
         - media_value:/app/media/
-      command: gunicorn --bind 0.0.0.0:8000 myshop.wsgi:application
+#      command: ["gunicorn", "--bind", "0.0.0.0:8000", "myshop.wsgi:application"]
 
     nginx:
       image: nginx:1.21.3-alpine
