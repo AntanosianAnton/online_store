@@ -11,3 +11,5 @@ COPY myshop .
 COPY db.sqlite3 .
 
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myshop.wsgi:application"]
+
+
