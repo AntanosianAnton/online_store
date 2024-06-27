@@ -451,11 +451,17 @@ footer {
 
 .product-list {
     display: grid;
-    flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     text-align: center;
     justify-content: space-around;
+    @media only screen and (max-width: 1200px){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media only screen and (max-width: 770px){
+        grid-template-columns: repeat(1, 1fr);
+    }
+
 }
 
 
@@ -572,6 +578,7 @@ footer {
 }
 .thumbnails-container{
     text-align: center;
+    margin-top: 25px;
 }
 
 .product-detail #next-btn {
@@ -804,11 +811,6 @@ footer {
     .socials div{
         margin: 0 auto;
 
-    }
-}
-@media only screen and (max-width: 1200px){
-    .product-list{
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
