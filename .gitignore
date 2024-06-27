@@ -151,3 +151,4 @@ dmypy.json
 
 # папки со статикой и медиа
 static/
+myshop/db.sqlite3

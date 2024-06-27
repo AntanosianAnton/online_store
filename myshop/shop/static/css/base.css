@@ -14,13 +14,15 @@
 
 @font-face {
     font-family: 'description';
-    src: url(fonts/Bicubik.OTF);
+    src: url(fonts/revada.otf);
 }
+
+
 
 body {
     margin:0;
     padding:0;
-    font-family:'Rowdies', sans-serif;
+    font-family:'description', sans-serif;
     background-color: #ffffff;
 }
 
@@ -159,9 +161,9 @@ ul.errorlist {
     font-weight: bold; /* Жирный шрифт */
     font-family: 'description', sans-serif;
     
-    display: block; /* Выравниваение текста по левому краю при мобильном экране */
+    display: contents; /* Выравниваение текста по левому краю при мобильном экране */
     @media only screen and (max-width: 1000px){
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
 }
 
@@ -198,10 +200,12 @@ ul.errorlist {
     height: auto;
 }
 .logo-footer {
-    width: 200px;
+    /* width: 200px; */
+    width: 5vw;
     height: auto;
     @media only screen and (max-width: 1000px){
-        width: 20vw;
+        width: 10vw;
+        height: auto;
     }
 }
 
@@ -495,7 +499,7 @@ footer {
 
 
 .product-list .description-container {
-    text-align: center;
+    text-align: left;
 }
 
 .product-list .item img {
@@ -507,9 +511,9 @@ footer {
 
 .product-list .item a {
     font-family: 'description', sans-serif; /* Replace 'YourDesiredFont' with the desired font name */
-    font-weight: bold; /* Optional: Adjust the font weight as needed */
+    font-weight: normal; /* Optional: Adjust the font weight as needed */
     font-size: 16px; /* Optional: Adjust the font size as needed */
-    color: #000000; /* Optional: Adjust the font color as needed */
+    color: #03030ed1; /* Optional: Adjust the font color as needed */
     /* text-decoration: none; Optional: Remove underlines if needed */
 }
 
@@ -546,7 +550,7 @@ footer {
     padding: 0; /* Убираем отступы вокруг изображения */
     padding-top: 0;
     margin-bottom: none; /* Убираем нижний отступ */
-    border-radius: 5px; /* Устанавливаем скругление углов */
+
     cursor: pointer;
 }
 
@@ -588,34 +592,39 @@ footer {
 .product-detail .product-info {
     flex: .6;
     text-align: left;
+    font-size: 13px;
+    font-family: 'description', sans-serif;
 }
 
 .product_name,
 .price {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'description', sans-serif;
+    color: #03030ed1;
 }
 
 /* Стили для кнопки "Заказать" */
 #order-btn {
-    background-color: #040904;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
-    border: none;
+    border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    font-family: 'description', sans-serif;
   }
   
 #size-btn {
-    background-color: #040904;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
-    border: none;
+    border: 1px solid #000000;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    font-family: 'description', sans-serif;
     }
 
 
@@ -689,13 +698,13 @@ footer {
   
   .back-to-catalog-btn button {
     padding: 10px 20px; /* Отступы внутри кнопки */
-    font-size: 12px; /* Размер шрифта */
-    background-color: #181212; /* Цвет фона кнопки */
-    color: #fff; /* Цвет текста кнопки */
-    border: none; /* Убираем границу кнопки */
+    font-size: 13px; /* Размер шрифта */
+    background-color: #ffffff; /* Цвет фона кнопки */
+    color: #000000; /* Цвет текста кнопки */
+    border: 1px solid #000000;
     border-radius: 5px; /* Закругление углов */
     cursor: pointer; /* Изменяем курсор при наведении */
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'description', sans-serif;
   }
   
   .back-to-catalog-btn button:hover {
@@ -780,6 +789,7 @@ footer {
     text-align: right;
     padding-right: 5em;
     margin-top: 5em;
+    font-family: 'description', sans-serif;
 }
 .btn{
     font-family: 'dostavka', sans-serif;
@@ -875,12 +885,13 @@ footer {
 
   .return-btn {
     float: right;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
     padding: 10px 20px;
-    background-color: #181212;
-    color: #f3eeee;
+    background-color: #ffffff;
+    color: #000000;
     text-decoration: none;
+    font-family: 'description', sans-serif;
 
   }
   

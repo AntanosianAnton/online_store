@@ -39,7 +39,7 @@
           {{ product.category }}
         </a>
       </h2> -->
-      <p class="price">{{ product.formatted_price }} р.</p>
+      <p class="price">{{ product.formatted_price }} ₽</p>
       <p class="description">{{product.description|linebreaks }}</p>
       <!-- <form action="{% url "cart:cart_add" product.id %}" method="post">
         {{ cart_product_form }}
@@ -68,15 +68,17 @@
   <div id="popup" class="popup">
     <div class="popup-content">
       <span class="close" id="close-popup">&times;</span>
-      <p>
+      <p style="font-family: 'description', sans-serif;">
         Спасибо, что выбрали нас!
       </p>
-      <p>
+      <p style="font-family: 'description', sans-serif;">
         Для оформления заказа перейдите в наш телеграм или инстаграм,
         для связи с менеджером.
       </p>
-      <bold>Важно!</bold>
-      <p>
+      <bold style="font-family: 'description', sans-serif;">
+        Важно!
+      </bold>
+      <p style="font-family: 'description', sans-serif;">
         Просим Вас ознакомиться с правилами 
         доставки и оплаты, перед оформлением заказа.
       </p>
