@@ -152,11 +152,26 @@ ul.errorlist {
     border-bottom: 1px solid #ccc; 
 }
 
+.header-delivery {
+    position: relative;
+    left: -5vw;
+}
+
+.header-contacts {
+    position: relative;
+    left: -5vw;
+}
+
+.header-exchange {
+    position: relative;
+    left: -5vw;
+}
+
 /* Стили для ссылок в header */
 .header-link {
     text-decoration: none; /* Убираем подчеркивание */
     color: black; /* Цвет текста */
-    padding: 10px 20px; /* Отступы вокруг текста */
+    padding: 10px 30px; /* Отступы вокруг текста */
     font-size: 20px; /* Размер шрифта */
     font-weight: bold; /* Жирный шрифт */
     font-family: 'description', sans-serif;
@@ -402,7 +417,7 @@ footer {
     width: 100%; /* Выравнивание по ширине */
     margin-bottom: 5px;
     @media only screen and (max-width: 1000px){
-        font-size: 5vw;
+        font-size: 8vw;
     }
 }
 
@@ -414,7 +429,7 @@ footer {
     width: 100%; /* Выравнивание по ширине */
     overflow-wrap: wrap;
     @media only screen and (max-width: 1000px){
-        font-size: 2vw;
+        font-size: 3vw;
     }
 }
 
@@ -444,7 +459,7 @@ footer {
     text-decoration: underline;
     transition: font-size 0.2s; /* Добавлено плавное изменение размера */
     @media only screen and (max-width: 700px){
-        font-size: 2vw;
+        font-size: 2.5vw;
     }
 }
 
@@ -708,7 +723,7 @@ footer {
   }
   
   .back-to-catalog-btn button:hover {
-    background-color: #181212; /* Цвет фона кнопки при наведении */
+    background-color: #ffffff; /* Цвет фона кнопки при наведении */
   }
 
 
