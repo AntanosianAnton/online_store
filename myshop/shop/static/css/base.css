@@ -417,7 +417,7 @@ footer {
     width: 100%; /* Выравнивание по ширине */
     margin-bottom: 5px;
     @media only screen and (max-width: 1000px){
-        font-size: 8vw;
+        font-size: 7vw;
     }
 }
 
@@ -429,7 +429,7 @@ footer {
     width: 100%; /* Выравнивание по ширине */
     overflow-wrap: wrap;
     @media only screen and (max-width: 1000px){
-        font-size: 3vw;
+        font-size: 2vw;
     }
 }
 
