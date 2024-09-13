@@ -5,28 +5,47 @@
 </head>
 {% block content %}
 <body>
-    <div class="text-container">
+    <!--<div class="text-container">
         <p class="main-text">REVADA miller</p>
-        <p class="sec-text">стиль, качество и комфорт для твоего идеального образа</p>
-    </div>
-    <div class="button-container">
-        <a href="{% url 'shop:product_list' %}" class="collection-link">Перейти к коллекции</a>
-    </div>
+        <p class="sec-text">Стиль, качество и комфорт для твоего идеального образа</p>
+    </div>-->
     <div class="pic-container">
         <div class="pic">
             <img src="{% static 'img/1.JPG' %}" alt="mnpc-1">
+            <h2  class="sec-text main-card-text">Новый дроп</h2>
+            <a href="{% url 'shop:product_list' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
         </div>
         <div class="pic">
             <img src="{% static 'img/4.JPG' %}" alt="mnpc-1">
+            <h2 class="sec-text main-card-text">Футболки оверсайз</h2>
+            <a href="{% url 'shop:product_list' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
         </div>
         <div class="pic">
-            <img src="{% static 'img/3.JPG' %}" alt="mnpc-1">
-        </div>
-        <div class="pic">
+            <h2 class="sec-text main-card-text">Лонгсливы</h2>
+            <a href="{% url 'shop:product_list' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
             <img src="{% static 'img/7.JPG' %}" alt="mnpc-1">
         </div>
     </div>
 
+<script>
+    function onEntry(entry) {
+      entry.forEach(change => {
+        if (change.isIntersecting) {
+         change.target.classList.add('show');
+        }
+      });
+    }
 
+let options = {
+  threshold: [0.5]
+};
+let observer = new IntersectionObserver(onEntry, options);
+let textEls = document.querySelectorAll('.pic')
+
+for (let elm of textEls) {
+  observer.observe(elm);
+}
+
+</script>
 </body>
 {% endblock %}

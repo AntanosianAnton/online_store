@@ -1,17 +1,30 @@
 {% load static %}
 <div id="header">
+
+
+      <a href="{% url 'shop:product_list' %}" class="header-link">Перейти к коллекции</a>
+
+
+      <a href="{% url 'shop:delivery_payments' %}" class="header-link">Доставка и оплата</a>
+
     <div class="head-logo-container">
       <a href="{% url 'shop:main_page' %}">
         <img src="{% static 'css/icons/logo-footer-new.png' %}" alt="Logo" class="logo-footer">
       </a>
     </div>
-    <div class="header-delivery">
-      <a href="{% url 'shop:delivery_payments' %}" class="header-link">Доставка и оплата</a>
-    </div>
-    <div class="header-contacts">
+
       <a href="{% url 'shop:contacts' %}" class="header-link">О нас</a>
-    </div>
-    <div class="header-exchange">
+
       <a href="{% url 'shop:exchange_return' %}" class="header-link">Возврат и обмен</a>
-    </div>
+
+
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+        <label for="burger-checkbox" class="burger"></label>
+        <ul class="menu-list">
+            <li><a href="{% url 'shop:product_list' %}" class="menu-item">Перейти к коллекции</a><li>
+            <li><a href="{% url 'shop:delivery_payments' %}" class="menu-item">Доставка и оплата</a><li>
+            <li><a href="{% url 'shop:contacts' %}" class="menu-item">О нас</a><li>
+            <li><a href="{% url 'shop:exchange_return' %}" class="menu-item">Возврат и обмен</a><li>
+        </ul>
+
   </div>
