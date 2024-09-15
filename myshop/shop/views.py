@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 
+"""получаем список всех товаров"""
+
 
 def product_list(request, category_slug=None):
     category = None
@@ -15,6 +17,45 @@ def product_list(request, category_slug=None):
                   'shop/product/list.html',
                   {'category': category,
                    'categories': categories,
+                   'products': products})
+
+
+"""получаем список товаров с категории onesize"""
+
+
+def product_list_onesize(request):
+    category = get_object_or_404(Category, slug='futbolki-onesize')
+    products = Product.objects.filter(available=True, category=category)
+
+    return render(request,
+                  'shop/product/list.html',
+                  {'category': category,
+                   'products': products})
+
+
+"""получаем список товаров с категории oversize"""
+
+
+def product_list_oversize(request):
+    category = get_object_or_404(Category, slug='futbolki-oversize')
+    products = Product.objects.filter(available=True, category=category)
+
+    return render(request,
+                  'shop/product/list.html',
+                  {'category': category,
+                   'products': products})
+
+
+"""получаем список товаров с категории лонгслив"""
+
+
+def product_list_longsleevs(request):
+    category = get_object_or_404(Category, slug='longsleevs')
+    products = Product.objects.filter(available=True, category=category)
+
+    return render(request,
+                  'shop/product/list.html',
+                  {'category': category,
                    'products': products})
 
 
