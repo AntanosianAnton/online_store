@@ -16,15 +16,20 @@
             <a href="{% url 'shop:product_list' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
         </div>
         <div class="pic">
-            <img src="{% static 'img/4.JPG' %}" alt="mnpc-1">
-            <h2 class="sec-text main-card-text">Футболки оверсайз</h2>
-            <a href="{% url 'shop:product_list' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
-        </div>
+          <img src="{% static 'img/4.JPG' %}" alt="mnpc-1">
+          <h2 class="sec-text main-card-text">Футболки OverSize</h2>
+          <a href="{% url 'shop:product_list_oversize' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
+      </div>
+      <div class="pic">
+        <h2 class="sec-text main-card-text">Лонгсливы</h2>
+        <a href="{% url 'shop:product_list_longsleevs' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
+        <img src="{% static 'img/7.JPG' %}" alt="mnpc-1">
+      </div>
         <div class="pic">
-            <h2 class="sec-text main-card-text">Лонгсливы</h2>
-            <a href="{% url 'shop:product_list' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
-            <img src="{% static 'img/7.JPG' %}" alt="mnpc-1">
-        </div>
+          <img src="{% static 'img/1.JPG' %}" alt="mnpc-1">
+          <h2  class="sec-text main-card-text">Футболки OneSize</h2>
+          <a href="{% url 'shop:product_list_onesize' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
+      </div>
     </div>
 
 <script>
