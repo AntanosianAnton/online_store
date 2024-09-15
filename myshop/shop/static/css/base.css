@@ -143,15 +143,22 @@ ul.errorlist {
     justify-content: space-around; /* Равномерно распределяем пространство между элементами */
     align-items: center; /* Выравниваем элементы по вертикали по центру */
     position: fixed;
-    top: 0;
-    /*left: 0;*/
-    width: 100%;
+    top: 10px;
+    border-radius: 25px;
+    left: 2.5%;
+    width: 95vw;
     /*height: 80px;*/
     padding: 15px 0;
-    background-color: white; /* Цвет фона заголовка */
+    /*background-color: white;*/ /* Цвет фона заголовка */
+    background: rgba(110, 110, 110, 0.5);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    flex-wrap:wrap;
     z-index: 1000;
-    border-bottom: 1px solid #ccc; 
+    --percent-height: 10%;
+    /*border-bottom: 1px solid #ccc; */
 }
+
 
 .header-delivery {
     position: relative;
@@ -243,24 +250,28 @@ ul.errorlist {
   transition: bottom .3s, transform .3s .15s;
 }
 .menu-list {
-  display: none;
   top: 0;
   right: 0;
-  position: absolute;
+  /*position: absolute;*/
   display: grid;
   gap: 12px;
-  padding: 100px 0;
+  padding-left: 0;
+  padding-top: 50px;
   margin: 0;
-  background: rgba(110, 110, 110, 0.5);
+  /*background: rgba(110, 110, 110, 0.4);
   -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);*/
   list-style-type: none;
-  transform: translateX(200%);
+  /*transform: translateX(200%);*/
   transition: .3s;
   width: 60%;
-  height: 40vw;
-  box-shadow: 10px 1px 30px 20px rgba(0, 0, 0, 0.2);
-
+  height: 40vh;
+  display: none;
+  /*box-shadow: 10px 1px 30px 20px rgba(0, 0, 0, 0.2);*/
+    border-radius: 0 0 25px 25px;
+    top: calc(var(--percent-height) * 7);
+  width: 100%;
+    height: 0;
 }
 .menu-item {
   display: block;
@@ -274,9 +285,21 @@ ul.errorlist {
   background: rgba(255,255,255,.2)
 }
 .burger-checkbox:checked ~ .menu-list {
-  transform: translateX(0);
+  /*transform: translateX(0);*/
+  display: grid;
+  height: auto;
+  animation: shows 1s;
 }
+@keyframes shows {
+    from {
+        opacity: 0;
 
+    }
+    to {
+        opacity: 1;
+
+    }
+}
 
 
 
@@ -314,7 +337,7 @@ ul.errorlist {
 }
 .logo-footer {
     /* width: 200px; */
-    width: 4vw;
+    width: 3vw;
     height: auto;
     @media only screen and (max-width: 1000px){
         width: 10vw;
@@ -480,8 +503,8 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     opacity: 0;
-    transform: translateX(-5em);
-    transition: all .3s ease;
+    transform: translateY(10em);
+    transition: all .5s ease;
     @media only screen and (max-width: 1000px){
         margin-top: .5vw;
         height: 90vw;
@@ -491,6 +514,7 @@ footer {
         height: 90vw;
         opacity: 1;
         transform: translateX(0);
+        margin-bottom: 25px;
     }
 
 }
