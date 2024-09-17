@@ -20,6 +20,19 @@ def product_list(request, category_slug=None):
                    'products': products})
 
 
+"""получаем список товаров с категории New Drop"""
+
+
+def product_list_new_drop(request):
+    category = get_object_or_404(Category, slug='new-drop')
+    products = Product.objects.filter(available=True, category=category)
+
+    return render(request,
+                  'shop/product/list.html',
+                  {'category': category,
+                   'products': products})
+
+
 """получаем список товаров с категории onesize"""
 
 

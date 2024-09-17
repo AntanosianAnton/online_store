@@ -13,6 +13,8 @@ urlpatterns = [
          name='product_list_oversize'),
     path('shop/longsleevs/', views.product_list_longsleevs,
          name='product_list_longsleevs'),
+    path('shop/new-drop/', views.product_list_new_drop,
+         name='product_list_new_drop'),
     path('<slug:category_slug>/', views.product_list,
          name='product_list_by_category'),
     path('<slug:slug>/<int:id>/', views.product_detail,
