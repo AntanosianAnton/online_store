@@ -20,37 +20,11 @@ def product_list(request, category_slug=None):
                    'products': products})
 
 
-"""получаем список товаров с категории New Drop"""
+"""получаем список товаров с категории футболки"""
 
 
-def product_list_new_drop(request):
-    category = get_object_or_404(Category, slug='new-drop')
-    products = Product.objects.filter(available=True, category=category)
-
-    return render(request,
-                  'shop/product/list.html',
-                  {'category': category,
-                   'products': products})
-
-
-"""получаем список товаров с категории onesize"""
-
-
-def product_list_onesize(request):
-    category = get_object_or_404(Category, slug='futbolki-onesize')
-    products = Product.objects.filter(available=True, category=category)
-
-    return render(request,
-                  'shop/product/list.html',
-                  {'category': category,
-                   'products': products})
-
-
-"""получаем список товаров с категории oversize"""
-
-
-def product_list_oversize(request):
-    category = get_object_or_404(Category, slug='futbolki-oversize')
+def product_list_futbolki(request):
+    category = get_object_or_404(Category, slug='futbolki')
     products = Product.objects.filter(available=True, category=category)
 
     return render(request,
