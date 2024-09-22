@@ -38,7 +38,17 @@
         <div class="description-container">
           <a href="{{ product.get_absolute_url }}"style="font-size: 15px;">{{ product.name }}</a>
           <br>
+          {% if product.available_sizes %}
+              {% for size in product.available_sizes %}
+                  <a href="" style="font-size: 15px;">{{ size.size.name }}</a>
+              {% endfor %}
+          {% else %}
+              <a href="" style="font-size: 15px;">нет в наличии</a>
+          {% endif %}
+          
+          <br>
           <a href="" style="font-size: 15px;">{{ product.formatted_price}} ₽</a>
+          <br>
         </div>
       </div>
     {% endfor %}

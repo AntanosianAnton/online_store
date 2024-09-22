@@ -22,6 +22,13 @@ class Category(models.Model):
                        args=[self.slug])
 
 
+class Size(models.Model):
+    name = models.CharField(max_length=10)  # Например: M, L, XL
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     category = models.ForeignKey(
         Category,
@@ -33,6 +40,9 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
+    sizes = models.ManyToManyField(Size,
+                                   through='ProductSize',
+                                   related_name='products')
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -53,6 +63,15 @@ class Product(models.Model):
 
     def formatted_price(self):
         return "{:,.0f}".format(self.price).replace(",", " ")
+
+
+class ProductSize(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    size = models.ForeignKey(Size, on_delete=models.CASCADE)
+    available = models.BooleanField(default=True)
+
+    class Meta:
+        unique_together = ('product', 'size')
 
 
 class ProductImage(models.Model):

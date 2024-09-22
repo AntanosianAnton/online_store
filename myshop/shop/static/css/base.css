@@ -389,6 +389,7 @@ footer {
 
 #content {
     padding:20px 10px;
+    padding-right: 50px;
     overflow:hidden;
 
 }
@@ -413,13 +414,14 @@ footer {
 }
 
 .category-list li {
-    margin: 0 15px; /* Отступы между элементами */
+    margin: 0 10px; /* Отступы между элементами */
 }
 
 .category-list li a {
     display: block;
     padding: 10px 15px;
     text-decoration: none;
+    text-align: center;
     color: #333;
     font-weight: bold;
 
@@ -678,13 +680,13 @@ footer {
     display: block;
     width: 360px;
     height: auto;
-    /* padding-left: 15%; */
-    margin: 0 auto; // расположение карточек товаров четко по центру своих блоков
+    margin: 0 auto;
+
 }
 
 .product-list .image-container {
-    width: 360px;
-    height: 400px;
+    width: 400px;
+    height: 440px;
     overflow: hidden;
     position: static;
     justify-content: center; /* Центрирование по горизонтали */
@@ -698,8 +700,8 @@ footer {
 }
 
 .product-list .item img {
-    width: 100%; /* Например, ширина в 10 em */
-    height: 120%;
+    width: 75%; /* Например, ширина в 10 em */
+    height: 95%;
     margin-bottom: 10px;
     border-radius: 20px;
 }
