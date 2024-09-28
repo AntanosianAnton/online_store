@@ -404,6 +404,7 @@ footer {
     list-style: none; /* Убираем маркеры списка */
     padding-top: 2.3vw;
     margin: 0;
+
     @media only screen and (max-width: 1000px){
         font-size: 2.5vw;
     }
@@ -545,7 +546,9 @@ footer {
     opacity: .3;
 }
 
-.pic-container .pic img { сохранения пропорций */
+.pic-container .pic img {
+    width: 100%; /* Заполнение всей ширины родительского контейнера */
+    height: auto; /* Автоматическое вычисление высоты для сохранения пропорций */
     top: -30%;
     position: absolute;
     @media only screen and (max-width: 1000px){
@@ -556,6 +559,13 @@ footer {
 
 
 @media only screen and (max-width: 428px) {
+    /* Стили для разрешения экрана шириной до 414px (iPhone 11 и подобные) */
+    .text-container {
+        top: 10%; /* Перераспределите расположение текста */
+        font-size: 30px; /* Уменьшите размер шрифта */
+    }
+
+    .main-text {
         font-size: 40px; /* Уменьшите размер шрифта для основного текста */
     }
 
@@ -688,7 +698,38 @@ footer {
 .product-list .description-container {
     text-align: left;
 }
-it pull origin master --allow-unrelated-histories
+
+.product-list .item img {
+    width: 75%; /* Например, ширина в 10 em */
+    height: 95%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.product-list .item a {
+    font-family: 'description', sans-serif; /* Replace 'YourDesiredFont' with the desired font name */
+    font-weight: normal; /* Optional: Adjust the font weight as needed */
+    font-size: 16px; /* Optional: Adjust the font size as needed */
+    color: #03030ed1; /* Optional: Adjust the font color as needed */
+    /* text-decoration: none; Optional: Remove underlines if needed */
+}
+
+.product-detail {
+    text-align:justify;
+    display: flex;
+    font-family: 'description', sans-serif;
+    @media only screen and (max-width: 770px){
+        flex-direction: column;
+    }
+}
+
+.product-detail .image-container {
+    position: relative;
+    width: 340px;
+    height: 520px;
+    margin: 0 auto;
+
+}
 
 .product-detail .image-container img {
     width: 340px;
