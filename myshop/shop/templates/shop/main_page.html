@@ -1,0 +1,42 @@
+{% extends "shop/base.html" %}
+{% load static %}
+<head>
+
+</head>
+{% block content %}
+<body>
+  <div class="pic-container">
+    <div class="pic">
+        <img src="{% static 'img/футболки.webp' %}" alt="mnpc-1">
+        <h2  class="sec-text main-card-text">Футболки</h2>
+        <a href="{% url 'shop:product_list_futbolki' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
+    </div>
+    <div class="pic">
+      <h2 class="sec-text main-card-text">Лонгсливы</h2>
+      <a href="{% url 'shop:product_list_longsleevs' %}" class="return-btn main-btn" style="">Перейти к коллекции</a>
+      <img src="{% static 'img/1.webp' %}" alt="mnpc-1">
+    </div>
+  </div>
+
+<script>
+    function onEntry(entry) {
+      entry.forEach(change => {
+        if (change.isIntersecting) {
+         change.target.classList.add('show');
+        }
+      });
+    }
+
+let options = {
+  threshold: [0.5]
+};
+let observer = new IntersectionObserver(onEntry, options);
+let textEls = document.querySelectorAll('.pic')
+
+for (let elm of textEls) {
+  observer.observe(elm);
+}
+
+</script>
+</body>
+{% endblock %}

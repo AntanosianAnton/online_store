@@ -1,0 +1,88 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  {% if category %}{{ category.name }}{% else %}Все товары{% endif %}
+{% endblock %}
+
+
+{% block content %}
+  <div id="category-header">
+    <ul class="category-list" style="padding-left: 0px;">
+      <li {% if not category %}class="selected"{% endif %}>
+        <a href="{% url "shop:product_list" %}">Все товары</a>
+      </li>
+      {% for c in categories %}
+        <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+          <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div id="main" class="product-list">
+    <!-- <h1>{% if category %}{{ category.name }}{% else %}{% endif %}</h1> -->
+    {% for product in products %}
+      <div class="item">
+        <a href="{{ product.get_absolute_url }}">
+          {% if product.images.all %}
+            <div class="image-container">
+              <img class="product-image" src="{{ product.images.all.0.image.url }}" alt="{{ product.name }}">
+              <img class="product-hover-image" src="{{ product.images.all.1.image.url }}" alt="{{ product.name }}">
+
+            </div>
+            
+          {% else %}
+            <img src="{% static 'img/no_image.png' %}" alt="No image">
+          {% endif %}
+        </a>
+        <div class="description-container">
+          <a href="{{ product.get_absolute_url }}"style="font-size: 15px;">{{ product.name }}</a>
+          <br>
+          {% if product.available_sizes %}
+              {% for size in product.available_sizes %}
+                  <a href="" style="font-size: 15px;">{{ size.size.name }}</a>
+              {% endfor %}
+          {% else %}
+              <a href="" style="font-size: 15px;">нет в наличии</a>
+          {% endif %}
+          
+          <br>
+          <a href="" style="font-size: 15px;">{{ product.formatted_price}} ₽</a>
+          <br>
+        </div>
+      </div>
+    {% endfor %}
+    {% if is_paginated %}
+      <div class="pagination">
+        <span class="step-links">
+          {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+          </span>
+
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+        </span>
+      </div>
+    {% endif %}
+  </div>
+  <style>
+    .product-hover-image {
+      display: none;
+    }
+
+    .item:hover .product-image {
+      display: none;
+    }
+
+    .item:hover .product-hover-image {
+      display: inline-block;
+    }
+  </style>
+{% endblock %}

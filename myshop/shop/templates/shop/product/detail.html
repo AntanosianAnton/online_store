@@ -1,0 +1,193 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+  {{ product.name }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="product-detail">
+    <div class="preview-image">
+      <div class="image-container">
+      <img id="current-image" src="{{ product.images.first.image.url }}" alt="{{ product.name }}">
+      <button id="prev-btn">←</button>
+      <button id="next-btn">→</button>
+    </div>
+
+    <!-- миниатюры для фото -->
+    <div class="thumbnails-container">
+      {% for image in product.images.all %}
+      <button class="thumbnail-btn">
+        <img src="{{ image.image.url }}" alt="{{ product.name }}" width="200" height="200">
+      </button>
+      {% endfor %}
+    </div>
+
+    </div>
+    <!-- <div class="thumbnails-container">
+      {% for image in product.images.all %}
+      <button class="thumbnail-btn">
+        <img src="{{ image.image.url }}" alt="{{ product.name }}" width="200" height="200">
+      </button>
+      {% endfor %}
+    </div> -->
+    <div class="product-info">
+      <p class="product_name">{{ product.name }}</p>
+      <!-- <h2>
+        <a href="{{ product.category.get_absolute_url }}">
+          {{ product.category }}
+        </a>
+      </h2> -->
+      <p class="price">{{ product.formatted_price }} ₽</p>
+      <p class="description">{{product.description|linebreaks }}</p>
+      <!-- <form action="{% url "cart:cart_add" product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input type="submit" value="Add to cart">
+      </form> -->
+
+      <!-- кнопка посмотреть размер -->
+      <div class="size-button">
+        <button id="size-btn">Посмотреть размер</button>
+      </div>
+
+      <!-- кнопка заказать -->
+      <div class="order-button">
+        <button id="order-btn">Заказать</button>
+      </div>
+    
+      <!-- кнопка вернуться в каталог -->
+      <div class="back-to-catalog-btn">
+        <button id="back-to-catalog-btn">Вернуться в каталог</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- всплывающее окно -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" id="close-popup">&times;</span>
+      <p style="font-family: 'description', sans-serif;">
+        Спасибо, что выбрали нас!
+      </p>
+      <p style="font-family: 'description', sans-serif;">
+        Для оформления заказа перейдите в наш телеграм или инстаграм,
+        для связи с менеджером.
+      </p>
+      <bold style="font-family: 'description', sans-serif;">
+        Важно!
+      </bold>
+      <p style="font-family: 'description', sans-serif;">
+        Просим Вас ознакомиться с правилами 
+        доставки и оплаты, перед оформлением заказа.
+      </p>
+      <div class="social-links">
+        <a href="https://t.me/revada_miller" class="social-link" target="_blank">Telegram</a>
+        <a href="https://www.instagram.com/revada_miller?igshid=MWJrMG13ZzBrbnhvNQ==" class="social-link" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- контейнер для изображения размеров -->
+  <div id="size-popup" class="popup">
+    <div class="popup-content">
+      <span class="close" id="close-size-popup">&times;</span>
+      {% if product.sizechart %}
+        <img src="{{ product.sizechart.url }}" alt="Size Chart" id="size-chart">
+      {% else %}
+        <p>Таблица размеров отсутствует.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    // Открытие всплывающего окна при клике на кнопку "Заказать"
+    const orderBtn = document.getElementById('order-btn');
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
+
+    orderBtn.addEventListener('click', function() {
+      popup.style.display = 'block';
+    });
+
+    // Закрытие всплывающего окна при клике на кнопку "Закрыть" или вне окна
+    closePopup.addEventListener('click', function() {
+      popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+      if (event.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+
+    // Открытие всплывающего окна с размером
+    const sizeBtn = document.getElementById('size-btn');
+    const sizePopup = document.getElementById('size-popup');
+    const closeSizePopup = document.getElementById('close-size-popup');
+
+    sizeBtn.addEventListener('click', function() {
+      sizePopup.style.display = 'block';
+    });
+
+    closeSizePopup.addEventListener('click', function() {
+      sizePopup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+      if (event.target === sizePopup) {
+        sizePopup.style.display = 'none';
+      }
+    });
+  </script>
+
+  
+
+  <!-- Операции с фото -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentImage = document.getElementById('current-image');
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+    
+      const thumbnails = document.querySelectorAll('.thumbnail-btn img');
+    
+      let currentIndex = 0;
+    
+      function showImage(index) {
+        currentImage.src = thumbnails[index].src;
+        currentIndex = index;
+      }
+    
+      prevBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+        showImage(currentIndex);
+      });
+    
+      nextBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % thumbnails.length;
+        showImage(currentIndex);
+      });
+    
+      // Обработчик события для каждой миниатюры
+      thumbnails.forEach(function(thumbnail, index) {
+        thumbnail.addEventListener('click', function() {
+          showImage(index);
+        });
+      });
+    
+      // Установка начального положения кнопок
+      const imageHeight = currentImage.clientHeight;
+      const btnTop = (imageHeight - prevBtn.clientHeight) / 2;
+      prevBtn.style.top = btnTop + 'px';
+      nextBtn.style.top = btnTop + 'px';
+    });
+
+    // Добавление обработчика для кнопки "Вернуться в каталог"
+    const backToCatalogBtn = document.getElementById('back-to-catalog-btn');
+    backToCatalogBtn.addEventListener('click', function() {
+      window.location.href = "{% url 'shop:product_list' %}";
+    });
+    </script>
+{% endblock %}
